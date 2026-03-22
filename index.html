@@ -7,7 +7,7 @@
   <meta name="description" content="אביב שירותים והתקנות – מומחים בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך. תכנון, אינטגרציה וביצוע מקצועי. עזריקם ומרכז הארץ." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     /* ─── Reset & Base ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,7 +24,7 @@
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Rubik', sans-serif;
       color: var(--text);
       background: var(--white);
       direction: rtl;
@@ -66,7 +66,7 @@
       gap: 8px;
       padding: 14px 34px;
       border-radius: 50px;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-size: 1rem;
       font-weight: 700;
       cursor: pointer;
@@ -98,36 +98,39 @@
       position: fixed;
       top: 0; inset-inline: 0;
       z-index: 1000;
-      padding: 0;
-      transition: all 0.3s ease;
+      background: white;
+      box-shadow: 0 1px 0 rgba(26,47,94,0.08);
+      transition: box-shadow 0.3s ease;
     }
     nav.scrolled {
-      background: rgba(26,47,94,0.97);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 24px rgba(26,47,94,0.13);
     }
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 5%;
+      padding: 14px 5%;
       max-width: 1400px;
       margin: 0 auto;
     }
-    .nav-logo img {
-      height: 54px;
-      filter: brightness(0) invert(1);
+    .nav-logo {
+      display: flex;
+      align-items: center;
       transition: opacity 0.2s;
     }
-    .nav-logo img:hover { opacity: 0.85; }
+    .nav-logo img {
+      height: 52px;
+      display: block;
+    }
+    .nav-logo:hover { opacity: 0.85; }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 2.5rem;
+      gap: 2.2rem;
       list-style: none;
     }
     .nav-links a {
-      color: rgba(255,255,255,0.85);
+      color: var(--navy);
       font-size: 0.97rem;
       font-weight: 500;
       transition: color 0.2s;
@@ -142,7 +145,7 @@
       background: var(--cyan);
       transition: width 0.25s ease;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--mid); }
     .nav-links a:hover::after { width: 100%; }
     .nav-cta {
       background: linear-gradient(135deg, var(--cyan), var(--mid));
@@ -150,19 +153,19 @@
       padding: 9px 22px;
       border-radius: 50px;
       font-weight: 700 !important;
-      box-shadow: 0 4px 16px rgba(41,182,232,0.35);
+      box-shadow: 0 4px 16px rgba(41,182,232,0.3);
     }
     .nav-cta::after { display: none !important; }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(41,182,232,0.45); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(41,182,232,0.42); }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { display: block; width: 26px; height: 2.5px; background: white; border-radius: 2px; transition: all 0.3s; }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
 
     /* ─── Hero ─── */
     #hero {
       min-height: 100vh;
       background:
-        linear-gradient(135deg, rgba(26,47,94,0.92) 0%, rgba(30,90,156,0.85) 50%, rgba(41,182,232,0.75) 100%),
-        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="g" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1" fill="%2329b6e8" opacity="0.15"/></pattern></defs><rect width="1200" height="800" fill="%231a2f5e"/><rect width="1200" height="800" fill="url(%23g)"/><line x1="0" y1="200" x2="1200" y2="400" stroke="%2329b6e8" stroke-width="0.5" opacity="0.1"/><line x1="0" y1="500" x2="1200" y2="200" stroke="%2329b6e8" stroke-width="0.5" opacity="0.1"/><line x1="200" y1="0" x2="400" y2="800" stroke="%2329b6e8" stroke-width="0.5" opacity="0.08"/></svg>');
+        linear-gradient(135deg, rgba(15,25,55,0.93) 0%, rgba(26,47,94,0.88) 45%, rgba(41,182,232,0.65) 100%),
+        url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -187,7 +190,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 120px 0 80px;
+      padding: 140px 0 80px;
       max-width: 780px;
     }
     .hero-badge {
@@ -309,20 +312,48 @@
       position: relative;
     }
     .about-img-wrap {
-      border-radius: 24px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--navy), var(--mid));
-      padding: 3.5rem;
+      border-radius: 28px;
+      background: linear-gradient(145deg, var(--navy) 0%, var(--blue) 60%, var(--mid) 100%);
+      padding: 3rem 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 400px;
+      min-height: 420px;
       position: relative;
+      box-shadow: 0 20px 60px rgba(26,47,94,0.2);
+      overflow: hidden;
+    }
+    .about-img-wrap::before {
+      content: '';
+      position: absolute;
+      width: 350px; height: 350px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.08);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .about-img-wrap::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      pointer-events: none;
+    }
+    .about-logo-wrap {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
     }
     .about-logo {
-      width: 240px;
-      filter: brightness(0) invert(1);
-      opacity: 0.95;
+      width: 280px;
+      display: block;
     }
     .about-badge {
       position: absolute;
@@ -722,16 +753,16 @@
       width: 44px; height: 44px;
       border-radius: 12px;
       background: var(--white);
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      flex-shrink: 0;
       transition: all 0.25s;
     }
     .contact-link:hover .contact-link-icon {
-      background: var(--navy);
-      border-color: var(--navy);
+      border-color: var(--mid);
+      box-shadow: 0 4px 12px rgba(26,47,94,0.1);
     }
     .contact-form {
       background: var(--white);
@@ -748,16 +779,26 @@
       border: 1.5px solid var(--border);
       border-radius: 10px;
       padding: 12px 16px;
-      font-family: 'Heebo', sans-serif;
+      font-family: 'Rubik', sans-serif;
       font-size: 0.95rem;
       color: var(--text);
       background: var(--white);
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
       direction: rtl;
+      width: 100%;
     }
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231a2f5e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 14px center;
+      padding-left: 40px;
+      cursor: pointer;
+    }
+    .form-group select:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(41,182,232,0.12); }
     .form-group input:focus,
-    .form-group select:focus,
     .form-group textarea:focus {
       border-color: var(--cyan);
       box-shadow: 0 0 0 3px rgba(41,182,232,0.12);
@@ -777,10 +818,17 @@
       gap: 3rem;
       margin-bottom: 3rem;
     }
+    .footer-logo {
+      display: inline-block;
+      background: white;
+      border-radius: 12px;
+      padding: 8px 16px;
+      margin-bottom: 1.4rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
     .footer-logo img {
-      height: 56px;
-      filter: brightness(0) invert(1);
-      margin-bottom: 1rem;
+      height: 48px;
+      display: block;
     }
     .footer-about {
       font-size: 0.9rem;
@@ -810,20 +858,20 @@
       gap: 1rem;
     }
     .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
-    .footer-socials { display: flex; gap: 0.75rem; }
+    .footer-socials { display: flex; gap: 0.6rem; align-items: center; }
     .social-btn {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.15);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      transition: all 0.25s;
+      transition: all 0.22s;
       cursor: pointer;
+      text-decoration: none;
     }
-    .social-btn:hover { background: var(--cyan); border-color: var(--cyan); }
+    .social-btn:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); }
 
     /* ─── Responsive ─── */
     @media (max-width: 1024px) {
@@ -848,8 +896,9 @@
       .form-row    { grid-template-columns: 1fr; }
       .elec-features { grid-template-columns: 1fr; }
       .about-pillars { grid-template-columns: 1fr; }
-      .nav-links { display: none; position: fixed; top: 0; right: 0; width: 80vw; height: 100vh; background: var(--navy); flex-direction: column; padding: 100px 2rem 2rem; gap: 1.5rem; z-index: 999; transform: translateX(100%); transition: transform 0.35s ease; }
+      .nav-links { display: none; position: fixed; top: 0; right: 0; width: 80vw; height: 100vh; background: white; box-shadow: -8px 0 40px rgba(0,0,0,0.15); flex-direction: column; padding: 100px 2rem 2rem; gap: 1.5rem; z-index: 999; transform: translateX(100%); transition: transform 0.35s ease; }
       .nav-links.open { transform: translateX(0); display: flex; }
+      .nav-links a { color: var(--navy) !important; font-size: 1.1rem; }
       .hamburger { display: flex; position: relative; z-index: 1001; }
       .about-badge { left: 15px; }
     }
@@ -873,6 +922,7 @@
 </head>
 <body>
 
+<div id="site-content">
 <!-- ══════════ NAVBAR ══════════ -->
 <nav id="navbar">
   <div class="nav-inner">
@@ -899,15 +949,15 @@
     <div class="hero-content fade-up">
       <div class="hero-badge">
         <span class="dot"></span>
-        חשמל · תקשורת · אוטומציה חכמה
+        תקשורת · אבטחה · חשמל · אוטומציה
       </div>
       <h1 class="hero-title">
-        פתרונות <span>חשמל ואוטומציה</span><br />
-        שמדברים זה עם זה
+        <span>תקשורת, אבטחה, חשמל</span><br />
+        ואוטומציה חכמה
       </h1>
       <p class="hero-desc">
         אביב שירותים והתקנות מתמחה בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך.
-        מהתכנון ועד הביצוע — הכול תחת קורת גג אחת, עם ניסיון שטח רב וידע הנדסי מעמיק.
+        מהתכנון ועד הביצוע, הכול תחת קורת גג אחת. ניסיון שטח רב וידע הנדסי מעמיק.
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary">
@@ -946,17 +996,17 @@
 <section id="services-strip">
   <div class="strip-grid" style="max-width:1400px;margin:0 auto;">
     <div class="strip-item">
-      <div class="strip-icon elec">⚡</div>
+      <div class="strip-icon comm">📡</div>
       <div class="strip-text">
-        <h3>חשמל</h3>
-        <p>התקנות חשמל מקצועיות לכל סוג מבנה — מגורים, מסחר ותעשייה</p>
+        <h3>תקשורת ואבטחה</h3>
+        <p>רשתות, מצלמות, אינטרקום, בקרת כניסה וגילוי אש</p>
       </div>
     </div>
     <div class="strip-item">
-      <div class="strip-icon comm">📡</div>
+      <div class="strip-icon elec">⚡</div>
       <div class="strip-text">
-        <h3>תקשורת ומתח נמוך</h3>
-        <p>רשתות, מצלמות, אינטרקום, בקרת כניסה וגילוי אש</p>
+        <h3>חשמל</h3>
+        <p>התקנות חשמל מקצועיות לכל סוג מבנה: מגורים, מסחר ותעשייה</p>
       </div>
     </div>
     <div class="strip-item">
@@ -975,7 +1025,9 @@
     <div class="about-grid">
       <div class="about-visual fade-up">
         <div class="about-img-wrap">
-          <img src="logo.png" alt="אביב שירותים והתקנות" class="about-logo" />
+          <div class="about-logo-wrap">
+            <img src="logo.png" alt="אביב שירותים והתקנות" class="about-logo" />
+          </div>
         </div>
         <div class="about-badge">
           <span class="badge-icon">🏆</span>
@@ -987,16 +1039,16 @@
       </div>
       <div class="about-text fade-up">
         <div class="tag">מי אנחנו</div>
-        <h2 class="section-title">טכנולוגיה, ידע הנדסי<br />וניסיון שטח — יחד</h2>
+        <h2 class="section-title">טכנולוגיה, ידע הנדסי<br />וניסיון שטח אמיתי</h2>
         <div class="divider"></div>
         <p>
-          אביב שירותים והתקנות הוקמה מתוך אמונה שמערכות טובות הן מערכות שעובדות יחד.
-          לאורך השנים הרחבנו את פעילותנו לעולם החשמל — ובכל תחום אנחנו מביאים את אותה רמת מקצועיות,
+          אביב שירותים והתקנות פועלת מאמונה פשוטה: מערכות טובות הן כאלה שעובדות ביחד.
+          לאורך השנים הרחבנו את הפעילות לעולם החשמל, ובכל תחום אנחנו מביאים את אותה רמת מקצועיות,
           דיוק ואחריות.
         </p>
         <p>
-          אנחנו מתכננים ומבצעים מערכות חשמל מלאות לצד מערכות תקשורת, מתח נמוך ואוטומציה —
-          וכשכל אלה מחוברים בצורה נכונה, הבניין כולו הופך לסביבה חכמה, יעילה ובטוחה.
+          אנחנו מתכננים ומבצעים מערכות חשמל לצד מערכות תקשורת, מתח נמוך ואוטומציה.
+          כשכל אלה מחוברים בצורה נכונה, הבניין כולו הופך לסביבה חכמה, יעילה ובטוחה.
         </p>
         <div class="about-pillars">
           <div class="pillar">
@@ -1032,23 +1084,22 @@
       <div class="tag">מה אנחנו עושים</div>
       <h2 class="section-title">השירותים שלנו</h2>
       <p class="section-sub" style="margin-inline:auto;">
-        פתרונות מקצועיים בחשמל, תקשורת ואוטומציה — לפרויקטים מגורים, מסחריים ותעשייתיים
+        תקשורת, אבטחה, חשמל ואוטומציה. הכול אצלנו, הכול מקצועי.
       </p>
     </div>
     <div class="services-grid">
 
-      <!-- חשמל -->
+      <!-- תקשורת ורשתות -->
       <div class="service-card fade-up">
-        <div class="service-icon yellow">⚡</div>
-        <h3>עבודות חשמל</h3>
-        <p>התקנות חשמל מקצועיות ומלאות לכל סוג מבנה, כולל עבודות שדרוג ושיפוץ.</p>
+        <div class="service-icon green">🌐</div>
+        <h3>תקשורת ורשתות</h3>
+        <p>תשתיות תקשורת לעסקים ולמגורים: מהירות, יציבות ואבטחת מידע.</p>
         <ul class="service-list">
-          <li>לוחות חשמל ומנעולים</li>
-          <li>הארקה ומוגנות יתר</li>
-          <li>גנרטורים ו-UPS</li>
-          <li>תאורה חיסכונית ו-LED</li>
-          <li>חיבורים ושדרוג מונים</li>
-          <li>עבודות חשמל לתעשייה</li>
+          <li>כבלאז׳ Cat6 / Cat7 וסיב אופטי</li>
+          <li>Wi-Fi ארגוני וכיסוי מלא</li>
+          <li>VoIP ומרכזיות טלפון</li>
+          <li>תשתיות רשת לבניינים חדשים</li>
+          <li>ניהול רשת מרחוק</li>
         </ul>
       </div>
 
@@ -1056,72 +1107,192 @@
       <div class="service-card fade-up">
         <div class="service-icon blue">📹</div>
         <h3>מצלמות אבטחה ומעקב</h3>
-        <p>מערכות מצלמות חכמות לפיקוח בזמן אמת מכל מקום, עם אחסון מאובטח.</p>
+        <p>מערכות מצלמות IP חכמות לפיקוח בזמן אמת, עם צפייה מהנייד ואחסון מאובטח.</p>
         <ul class="service-list">
-          <li>מצלמות IP חכמות</li>
-          <li>צפייה מרחוק מהנייד</li>
-          <li>זיהוי פנים ורכב</li>
-          <li>הקלטה וארכיון ענן</li>
-          <li>התראות חכמות בזמן אמת</li>
+          <li>מצלמות IP ו-HD איכותיות</li>
+          <li>זיהוי פנים, רכב ואנליטיקה</li>
+          <li>הקלטה מקומית וענן</li>
+          <li>צפייה מרחוק 24/7</li>
+          <li>התקנה לעסקים, מחסנים ובתים</li>
         </ul>
       </div>
 
       <!-- בקרת כניסה -->
       <div class="service-card fade-up">
         <div class="service-icon navy">🔐</div>
-        <h3>בקרת כניסה ואבטחה</h3>
-        <p>ניהול גישה חכם לפי הרשאות — לאנשים, כרטיסים, שעות ואזורים.</p>
+        <h3>בקרת כניסה ואינטרקום</h3>
+        <p>ניהול גישה חכם לפי הרשאות, שעות ואזורים, עם אינטרקום וידאו.</p>
         <ul class="service-list">
-          <li>קורא כרטיסים וטביעת אצבע</li>
-          <li>אינטרקום וידאו חכם</li>
-          <li>גישה מרחוק מהסמארטפון</li>
-          <li>שליטה לפי שעות ואזורים</li>
-          <li>דוחות כניסות ויציאות</li>
+          <li>קוראי כרטיסים וביומטריה</li>
+          <li>אינטרקום וידאו צבעוני</li>
+          <li>פתיחה מרחוק מהטלפון</li>
+          <li>הגדרת הרשאות לפי תפקיד</li>
+          <li>יומן כניסות ויציאות</li>
         </ul>
       </div>
 
       <!-- גילוי אש -->
       <div class="service-card fade-up">
         <div class="service-icon orange">🔥</div>
-        <h3>גילוי אש וחירום</h3>
-        <p>מערכות גילוי אש וגז עם התראה אוטומטית לכוחות ביטחון וכיבוי.</p>
+        <h3>אזעקה וגילוי אש</h3>
+        <p>מערכות אזעקה, גילוי אש וגז עם חיבור לחברת שמירה ולוח בקרה מרכזי.</p>
         <ul class="service-list">
           <li>גלאי עשן, חום וגז</li>
-          <li>לוח בקרה מרכזי</li>
-          <li>ספרינקלרים וכיבוי אש</li>
-          <li>חיבור לרכזת ענן</li>
-          <li>תחזוקה ובדיקות תקופתיות</li>
+          <li>לוח בקרה מרכזי ומרוחק</li>
+          <li>אזעקה ביתית ועסקית</li>
+          <li>חיבור לחברת שמירה</li>
+          <li>בדיקות תקופתיות ותחזוקה</li>
         </ul>
       </div>
 
-      <!-- תקשורת ורשתות -->
+      <!-- חדרי שרתים -->
       <div class="service-card fade-up">
-        <div class="service-icon green">🌐</div>
-        <h3>תקשורת ורשתות</h3>
-        <p>תשתיות תקשורת מתקדמות לעסקים ומגורים — מהירות, אמינות ומאובטחת.</p>
+        <div class="service-icon navy">🖥️</div>
+        <h3>חדרי שרתים ו-Data Center</h3>
+        <p>תכנון והקמה של חדרי שרתים, מהארון הבודד ועד חדר שרתים מלא.</p>
         <ul class="service-list">
-          <li>כבלי Cat6/Cat7 וסיב אופטי</li>
-          <li>Wi-Fi ארגוני מקצועי</li>
-          <li>VoIP ומרכזיות טלפון</li>
-          <li>חדרי שרתים ו-Rack</li>
-          <li>ניהול רשת מרחוק</li>
+          <li>תכנון ובניית Rack מסודר</li>
+          <li>כבלאז׳ מקצועי ומסודר</li>
+          <li>מיזוג ייעודי וניטור חום</li>
+          <li>UPS ואספקת חשמל רציפה</li>
+          <li>אבטחה פיזית לחדר השרתים</li>
+        </ul>
+      </div>
+
+      <!-- חשמל -->
+      <div class="service-card fade-up">
+        <div class="service-icon yellow">⚡</div>
+        <h3>עבודות חשמל</h3>
+        <p>התקנות חשמל מלאות לכל סוג מבנה, החל מדירה ועד מפעל.</p>
+        <ul class="service-list">
+          <li>לוחות חשמל ומנעולים</li>
+          <li>הארקה ומוגנות יתר</li>
+          <li>גנרטורים ו-UPS</li>
+          <li>תאורה LED חיסכונית</li>
+          <li>עבודות חשמל לתעשייה</li>
         </ul>
       </div>
 
       <!-- אוטומציה -->
       <div class="service-card fade-up">
         <div class="service-icon purple">🤖</div>
-        <h3>אוטומציה ובקרה חכמה</h3>
-        <p>שילוב כל מערכות הבניין לניהול אחד חכם — תאורה, מיזוג, גישה ועוד.</p>
+        <h3>אוטומציה ובית חכם</h3>
+        <p>חיבור כל מערכות הבניין לניהול אחד: תאורה, מיזוג, גישה ואבטחה.</p>
         <ul class="service-list">
-          <li>בקרת תאורה ומיזוג</li>
-          <li>ניהול אנרגיה חכם</li>
-          <li>אפליקציה לניהול הכול</li>
-          <li>תזמונים ולוחות זמנים</li>
-          <li>שילוב KNX / Modbus / BACnet</li>
+          <li>בקרת תאורה ומיזוג חכמה</li>
+          <li>ניהול אנרגיה וחיסכון בחשמל</li>
+          <li>אפליקציה לשליטה מהנייד</li>
+          <li>תזמונים אוטומטיים</li>
+          <li>KNX / Control4 / שליטה מרכזית</li>
         </ul>
       </div>
 
+      <!-- פתרונות מותאמים -->
+      <div class="service-card fade-up" style="border: 2px solid rgba(41,182,232,0.3); background: linear-gradient(145deg, #f0f8ff, #ffffff);">
+        <div class="service-icon blue">🔩</div>
+        <h3>פתרונות מותאמים אישית</h3>
+        <p>כל פרויקט מקבל פתרון שתפור לו בדיוק: אנחנו מתכננים, מבצעים ומלווים.</p>
+        <ul class="service-list">
+          <li>אפיון מדויק לפי הצורך</li>
+          <li>פתרונות לתעשייה ומפעלים</li>
+          <li>אינטגרציה עם מערכות קיימות</li>
+          <li>בקרות PLC ו-SCADA</li>
+          <li>ליווי הנדסי לאורך כל הדרך</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ BRANDS ══════════ -->
+<section id="brands" style="background:#f8fbff;padding:70px 0;">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:2.5rem;">
+      <div class="tag">הציוד שאנחנו עובדים איתו</div>
+      <h2 class="section-title">מותגים מובילים בלבד</h2>
+      <p class="section-sub" style="margin-inline:auto;">אנחנו עובדים עם היצרנים המובילים בעולם בכל תחום</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2rem;">
+
+      <!-- מצלמות ווידאו -->
+      <div class="brand-row fade-up">
+        <div class="brand-cat-label">
+          <span class="brand-cat-icon">📹</span>
+          <span>מצלמות ווידאו</span>
+        </div>
+        <div class="brand-pills">
+          <span class="brand-pill">Hikvision</span>
+          <span class="brand-pill">Dahua</span>
+          <span class="brand-pill">Uniview (UNV)</span>
+          <span class="brand-pill">Provision-ISR</span>
+          <span class="brand-pill">Axis Communications</span>
+          <span class="brand-pill">Hanwha Vision</span>
+          <span class="brand-pill">Bosch Security</span>
+        </div>
+      </div>
+
+      <!-- אזעקה וגילוי אש -->
+      <div class="brand-row fade-up">
+        <div class="brand-cat-label">
+          <span class="brand-cat-icon">🔥</span>
+          <span>אזעקה וגילוי אש</span>
+        </div>
+        <div class="brand-pills">
+          <span class="brand-pill">RISCO</span>
+          <span class="brand-pill">Pima</span>
+          <span class="brand-pill">Telfire</span>
+          <span class="brand-pill">Visonic</span>
+          <span class="brand-pill">Paradox</span>
+          <span class="brand-pill">DSC</span>
+          <span class="brand-pill">Honeywell Security</span>
+        </div>
+      </div>
+
+      <!-- רשתות ותקשורת -->
+      <div class="brand-row fade-up">
+        <div class="brand-cat-label">
+          <span class="brand-cat-icon">🌐</span>
+          <span>רשתות ותקשורת</span>
+        </div>
+        <div class="brand-pills">
+          <span class="brand-pill brand-pill">Ubiquiti UniFi</span>
+          <span class="brand-pill">MikroTik</span>
+          <span class="brand-pill">TP-Link</span>
+          <span class="brand-pill">Cisco</span>
+          <span class="brand-pill">Netgear</span>
+          <span class="brand-pill">PallNet</span>
+          <span class="brand-pill brand-pill">Control4</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+  .brand-row { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; padding:1rem 1.5rem; background:white; border-radius:16px; border:1px solid var(--border); }
+  .brand-cat-label { display:flex; align-items:center; gap:8px; min-width:160px; font-weight:700; color:var(--navy); font-size:0.95rem; flex-shrink:0; }
+  .brand-cat-icon { font-size:1.2rem; }
+  .brand-pills { display:flex; flex-wrap:wrap; gap:8px; }
+  .brand-pill { background:#f0f6ff; border:1.5px solid #d6e4f5; color:var(--navy); font-size:0.82rem; font-weight:600; padding:5px 14px; border-radius:50px; transition:all 0.2s; cursor:default; }
+  .brand-pill:hover { background:var(--navy); color:white; border-color:var(--navy); }
+  @media(max-width:768px) { .brand-row { flex-direction:column; align-items:flex-start; } .brand-cat-label { min-width:auto; } }
+</style>
+
+<!-- ══════════ PHOTO STRIP ══════════ -->
+<section id="photo-strip" style="padding:0;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);height:240px;">
+    <div style="background:linear-gradient(rgba(26,47,94,0.35),rgba(26,47,94,0.35)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
+      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">חשמל</span>
+    </div>
+    <div style="background:linear-gradient(rgba(26,47,94,0.3),rgba(26,47,94,0.3)),url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
+      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">שרתים</span>
+    </div>
+    <div style="background:linear-gradient(rgba(26,47,94,0.3),rgba(26,47,94,0.3)),url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
+      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">אבטחה</span>
+    </div>
+    <div style="background:linear-gradient(rgba(26,47,94,0.3),rgba(26,47,94,0.3)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
+      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">תקשורת</span>
     </div>
   </div>
 </section>
@@ -1131,11 +1302,11 @@
   <div class="container">
     <div class="elec-grid">
       <div class="elec-text fade-up">
-        <div class="tag">⚡ התמחות חדשה</div>
-        <h2>חשמל מקצועי —<br /><span class="accent">חלק מהפתרון הכולל</span></h2>
+        <div class="tag">⚡ ליבת המומחיות שלנו</div>
+        <h2>חשמל מקצועי,<br /><span class="accent">חלק מהפתרון הכולל</span></h2>
         <p>
-          הרחבנו את פעילותנו לעולם החשמל המלא. כיום אנחנו מספקים פתרון אחד אינטגרטיבי שבו עבודות החשמל
-          ומערכות המתח הנמוך מתוכננות ומבוצעות יחד — על ידי אותה חברה, עם אותה רמת איכות ואחריות.
+          עבודות חשמל הן חלק בלתי נפרד ממה שאנחנו עושים. עבודות החשמל
+          ומערכות המתח הנמוך מתוכננות ומבוצעות יחד, על ידי אותה חברה, עם אותה רמת איכות ואחריות.
         </p>
         <a href="#contact" class="btn btn-primary">דבר איתנו על הפרויקט שלך</a>
       </div>
@@ -1143,7 +1314,7 @@
         <div class="elec-feat">
           <div class="elec-feat-icon">🏠</div>
           <h4>מגורים</h4>
-          <p>דירות, בתים פרטיים ובניינים — מהבסיס עד האוטומציה</p>
+          <p>דירות, בתים פרטיים ובניינים, מהבסיס ועד האוטומציה</p>
         </div>
         <div class="elec-feat">
           <div class="elec-feat-icon">🏢</div>
@@ -1170,29 +1341,29 @@
   <div class="container">
     <div class="integration-inner">
       <div class="integration-text fade-up">
-        <div class="tag">הסינרגיה שלנו</div>
+        <div class="tag">כשהכול מחובר</div>
         <h2 class="section-title">מערכות שמדברות<br />זו עם זו</h2>
         <div class="divider"></div>
         <p>
-          הייחוד שלנו הוא בחיבור: כשחשמל, תקשורת ואוטומציה מתוכננים יחד מהיום הראשון,
-          התוצאה היא בניין שחוסך אנרגיה, מייעל תהליכים ומספק חוויית שליטה שלמה.
+          כשחשמל, תקשורת ואוטומציה מתוכננים יחד מהיום הראשון, התוצאה היא בניין
+          שחוסך אנרגיה, מייעל תהליכים ומספק שליטה מלאה.
         </p>
         <p>
-          גלאי נוכחות מכבה תאורה ומיזוג אוטומטית. מצלמות מתואמות עם בקרת הכניסה.
-          תקלת חשמל מייצרת התראה מיידית. הכול ניהול בלחיצה אחת.
+          גלאי נוכחות מכבה תאורה ומיזוג אוטומטית. המצלמות עובדות יחד עם בקרת הכניסה.
+          תקלת חשמל מייצרת התראה מיידית. הכול ניתן לניהול מהטלפון.
         </p>
         <ul class="integration-list">
           <li>
             <span class="check-icon">✓</span>
-            גלאי נוכחות ותאורה חכמה — חיסכון של עד 40% בחשמל
+            גלאי נוכחות ותאורה חכמה: חיסכון של עד 40% בחשמל
           </li>
           <li>
             <span class="check-icon">✓</span>
-            מצלמות מסונכרנות עם מערכת הכניסה — אבטחה מלאה
+            מצלמות מסונכרנות עם מערכת הכניסה לאבטחה מלאה
           </li>
           <li>
             <span class="check-icon">✓</span>
-            בקרה ממרחק — מחשב, טאבלט או סמארטפון
+            בקרה ממרחק ממחשב, טאבלט או סמארטפון
           </li>
           <li>
             <span class="check-icon">✓</span>
@@ -1200,7 +1371,7 @@
           </li>
           <li>
             <span class="check-icon">✓</span>
-            שדרוג הדרגתי — מתחילים בחשמל ומרחיבים לאוטומציה
+            שדרוג הדרגתי: מתחילים בחשמל ומרחיבים לאוטומציה
           </li>
         </ul>
       </div>
@@ -1224,7 +1395,7 @@
       <div class="tag">איך זה עובד</div>
       <h2 class="section-title">תהליך העבודה שלנו</h2>
       <p class="section-sub" style="margin-inline:auto;">
-        מהפגישה הראשונה עד לאחריות שלאחר ההתקנה — אנחנו לצדכם בכל שלב
+        מהפגישה הראשונה ועד לאחריות שלאחר ההתקנה, אנחנו לצדכם בכל שלב
       </p>
     </div>
     <div class="process-steps">
@@ -1241,7 +1412,7 @@
       <div class="process-step fade-up">
         <div class="step-num">🔧</div>
         <h3>התקנה מקצועית</h3>
-        <p>ביצוע על ידי צוות מוסמך, נקי ומסודר — לפי לוח הזמנים המוסכם</p>
+        <p>ביצוע על ידי צוות מוסמך, נקי ומסודר, לפי לוח הזמנים המוסכם</p>
       </div>
       <div class="process-step fade-up">
         <div class="step-num">✅</div>
@@ -1257,23 +1428,23 @@
   <div class="container">
     <div class="text-center fade-up" style="margin-bottom:3rem;">
       <div class="tag">למה אביב</div>
-      <h2 class="section-title">המחויבות שלנו אליך</h2>
+      <h2 class="section-title">למה לקוחות בוחרים בנו</h2>
     </div>
     <div class="why-grid">
       <div class="why-card fade-up">
         <span class="why-icon">🏗️</span>
         <h3>ניסיון שטח אמיתי</h3>
-        <p>מאות פרויקטים בכל סוגי המבנים — מדירה פרטית ועד מתקן תעשייתי גדול</p>
+        <p>מאות פרויקטים בכל סוגי המבנים, מדירה פרטית ועד מתקן תעשייתי גדול</p>
       </div>
       <div class="why-card fade-up">
         <span class="why-icon">🔗</span>
         <h3>פתרון אחד לכולם</h3>
-        <p>חשמל, תקשורת ואוטומציה — כל הדיסציפלינות תחת ניהול אחד, בלי ריבוי קבלנים</p>
+        <p>חשמל, תקשורת ואוטומציה: כל הדיסציפלינות תחת ניהול אחד, בלי ריבוי קבלנים</p>
       </div>
       <div class="why-card fade-up">
         <span class="why-icon">📋</span>
         <h3>מוסמכים ומורשים</h3>
-        <p>כל הצוות מוסמך ומורשה בחשמל ומתח נמוך — עמידה מלאה בתקני הבטיחות</p>
+        <p>כל הצוות מוסמך ומורשה בחשמל ומתח נמוך, עמידה מלאה בתקני הבטיחות</p>
       </div>
       <div class="why-card fade-up">
         <span class="why-icon">💡</span>
@@ -1288,7 +1459,7 @@
       <div class="why-card fade-up">
         <span class="why-icon">📱</span>
         <h3>שליטה מהסמארטפון</h3>
-        <p>כל מה שאנחנו מתקינים — אפשר לנהל ולפקח עליו מרחוק בקלות ובנוחות</p>
+        <p>כל מה שאנחנו מתקינים ניתן לניהול ופיקוח מרחוק, בקלות ובנוחות</p>
       </div>
     </div>
   </div>
@@ -1300,7 +1471,7 @@
     <div class="fade-up">
       <div class="tag" style="margin-bottom:1.2rem;">צור קשר עוד היום</div>
       <h2>מוכן לשדרג את הנכס שלך?</h2>
-      <p>בוא נדבר על הפרויקט — קבל ייעוץ ראשוני חינם והצעת מחיר מפורטת</p>
+      <p>בוא נדבר על הפרויקט. ייעוץ ראשוני חינם והצעת מחיר מפורטת.</p>
       <div class="cta-btns">
         <a href="#contact" class="btn btn-white">צור קשר עכשיו</a>
         <a href="tel:054-8138800" class="btn btn-outline">📞 054-813-8800</a>
@@ -1317,20 +1488,30 @@
         <div class="tag">דברו איתנו</div>
         <h3>נשמח לשמוע ממך</h3>
         <p>
-          בין אם מדובר בפרויקט גדול או בשאלה פשוטה — צוות אביב שירותים והתקנות
+          בין אם מדובר בפרויקט גדול או בשאלה פשוטה, צוות אביב שירותים והתקנות
           כאן בשבילך. ייעוץ ראשוני ללא עלות.
         </p>
         <div class="contact-links">
           <a href="tel:054-8138800" class="contact-link">
-            <div class="contact-link-icon">📞</div>
-            054-813-8800 (משרד)
+            <div class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            054-813-8800
           </a>
-          <a href="tel:050-9839010" class="contact-link">
-            <div class="contact-link-icon">📱</div>
-            050-983-9010 (אביב)
+          <a href="https://wa.me/9720509839010" target="_blank" rel="noopener" class="contact-link">
+            <div class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25d366">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            WhatsApp
           </a>
           <a href="mailto:office@avivsai.co.il" class="contact-link">
-            <div class="contact-link-icon">✉️</div>
+            <div class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#EA4335">
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.907 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+              </svg>
+            </div>
             office@avivsai.co.il
           </a>
           <a href="https://maps.google.com/?q=התפוז+330+עזריקם" target="_blank" class="contact-link">
@@ -1347,44 +1528,44 @@
         <form onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label for="fname">שם פרטי</label>
-              <input type="text" id="fname" name="fname" placeholder="ישראל" required />
+              <label for="fullname">שם מלא</label>
+              <input type="text" id="fullname" name="fullname" placeholder="שם מלא" required />
             </div>
             <div class="form-group">
-              <label for="lname">שם משפחה</label>
-              <input type="text" id="lname" name="lname" placeholder="ישראלי" required />
+              <label for="company">שם חברה</label>
+              <input type="text" id="company" name="company" placeholder="שם העסק / הארגון" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="phone">טלפון</label>
-              <input type="tel" id="phone" name="phone" placeholder="050-0000000" required />
+              <input type="tel" id="phone" name="phone" placeholder="05X XXXXXXX" required />
             </div>
             <div class="form-group">
-              <label for="email">אימייל</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" />
+              <label for="email">דוא"ל</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" />
             </div>
           </div>
           <div class="form-group">
-            <label for="service">סוג השירות</label>
+            <label for="service">תחום השירות</label>
             <select id="service" name="service">
-              <option value="">-- בחר שירות --</option>
+              <option value="">בחר תחום</option>
               <option>עבודות חשמל</option>
               <option>מצלמות אבטחה</option>
               <option>בקרת כניסה</option>
               <option>גילוי אש וחירום</option>
               <option>תקשורת ורשתות</option>
+              <option>חדרי שרתים</option>
               <option>אוטומציה חכמה</option>
-              <option>פתרון אינטגרטיבי מלא</option>
-              <option>אחר</option>
+              <option>פתרון מותאם אישית</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">פרטים נוספים</label>
-            <textarea id="message" name="message" placeholder="ספר לנו על הפרויקט שלך..."></textarea>
+            <label for="message">פרטי הפרויקט</label>
+            <textarea id="message" name="message" placeholder="ספר לנו על הפרויקט, המבנה, הצרכים..."></textarea>
           </div>
           <button type="submit" class="btn btn-primary form-submit">
-            שלח פנייה ✉️
+            שלח פנייה
           </button>
         </form>
       </div>
@@ -1402,17 +1583,18 @@
         </div>
         <p class="footer-about">
           מומחים בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך.
-          פתרונות מלאים מהתכנון ועד הביצוע — תחת קורת גג אחת.
+          פתרונות מלאים מהתכנון ועד הביצוע, תחת קורת גג אחת.
         </p>
       </div>
       <div class="footer-col">
         <h4>שירותים</h4>
         <ul class="footer-links">
-          <li><a href="#services">עבודות חשמל</a></li>
+          <li><a href="#services">תקשורת ורשתות</a></li>
           <li><a href="#services">מצלמות אבטחה</a></li>
           <li><a href="#services">בקרת כניסה</a></li>
-          <li><a href="#services">גילוי אש</a></li>
-          <li><a href="#services">תקשורת ורשתות</a></li>
+          <li><a href="#services">אזעקה וגילוי אש</a></li>
+          <li><a href="#services">חדרי שרתים</a></li>
+          <li><a href="#services">עבודות חשמל</a></li>
           <li><a href="#services">אוטומציה חכמה</a></li>
         </ul>
       </div>
@@ -1431,7 +1613,6 @@
         <h4>צור קשר</h4>
         <ul class="footer-links">
           <li><a href="tel:054-8138800">📞 054-813-8800</a></li>
-          <li><a href="tel:050-9839010">📱 050-983-9010</a></li>
           <li><a href="mailto:office@avivsai.co.il">✉️ office@avivsai.co.il</a></li>
           <li><a href="#">📍 התפוז 330, עזריקם</a></li>
         </ul>
@@ -1440,13 +1621,178 @@
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 אביב שירותים והתקנות | עוסק מורשה 200712610 | <a href="mailto:office@avivsai.co.il" style="color:rgba(255,255,255,0.4);text-decoration:none;">avivsai.co.il</a></p>
       <div class="footer-socials">
-        <a href="https://wa.me/9720509839010" target="_blank" class="social-btn" title="WhatsApp">💬</a>
-        <a href="mailto:office@avivsai.co.il" class="social-btn" title="אימייל" style="font-size:0.8rem;font-weight:700;">✉</a>
-        <a href="tel:054-8138800" class="social-btn" title="טלפון">📞</a>
+        <a href="tel:054-8138800" class="social-btn" title="054-813-8800">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+        <a href="mailto:office@avivsai.co.il" class="social-btn" title="office@avivsai.co.il">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.85)"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.907 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+        </a>
+        <a href="https://wa.me/9720509839010" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="rgba(255,255,255,0.85)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </footer>
+</div><!-- /site-content -->
+
+<!-- ══════════ ACCESSIBILITY MENU ══════════ -->
+<div id="a11y-widget" aria-label="תפריט נגישות" role="region">
+  <button id="a11y-toggle" onclick="toggleA11y()" aria-expanded="false" aria-controls="a11y-panel" title="פתח תפריט נגישות">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true">
+      <path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm-1 5h2v5l3 5H8l3-5V7zm-4.5 1.5L8 10l1 4-4 1.5 1-5zm9 0l1 5-4-1.5 1-4 2-1.5z"/>
+    </svg>
+    <span>נגישות</span>
+  </button>
+  <div id="a11y-panel" role="dialog" aria-label="אפשרויות נגישות" hidden>
+    <div class="a11y-header">
+      <h2>תפריט נגישות</h2>
+      <button class="a11y-close" onclick="toggleA11y()" aria-label="סגור תפריט נגישות">✕</button>
+    </div>
+    <p class="a11y-sub">התאם את האתר לנוחותך</p>
+    <div class="a11y-grid">
+      <button class="a11y-btn" onclick="changeFontSize(1)" aria-label="הגדל גופן">
+        <span class="a11y-icon">A+</span>
+        <span>הגדל טקסט</span>
+      </button>
+      <button class="a11y-btn" onclick="changeFontSize(-1)" aria-label="הקטן גופן">
+        <span class="a11y-icon">A-</span>
+        <span>הקטן טקסט</span>
+      </button>
+      <button class="a11y-btn" id="btn-contrast" onclick="toggleContrast()" aria-pressed="false" aria-label="ניגודיות גבוהה">
+        <span class="a11y-icon">◐</span>
+        <span>ניגודיות גבוהה</span>
+      </button>
+      <button class="a11y-btn" id="btn-gray" onclick="toggleGray()" aria-pressed="false" aria-label="גווני אפור">
+        <span class="a11y-icon">◯</span>
+        <span>גווני אפור</span>
+      </button>
+      <button class="a11y-btn" id="btn-links" onclick="toggleLinks()" aria-pressed="false" aria-label="הדגשת קישורים">
+        <span class="a11y-icon">🔗</span>
+        <span>הדגשת קישורים</span>
+      </button>
+      <button class="a11y-btn" id="btn-cursor" onclick="toggleCursor()" aria-pressed="false" aria-label="סמן גדול">
+        <span class="a11y-icon">⬤</span>
+        <span>סמן גדול</span>
+      </button>
+      <button class="a11y-btn" id="btn-readable" onclick="toggleReadable()" aria-pressed="false" aria-label="גופן קריא">
+        <span class="a11y-icon">Aa</span>
+        <span>גופן קריא</span>
+      </button>
+      <button class="a11y-btn a11y-reset" onclick="resetA11y()" aria-label="איפוס הגדרות">
+        <span class="a11y-icon">↺</span>
+        <span>איפוס</span>
+      </button>
+    </div>
+    <p class="a11y-law">אתר זה עומד בדרישות תקן נגישות ישראלי (WCAG 2.1 AA)<br/>לפנייה בנושא נגישות: <a href="mailto:office@avivsai.co.il">office@avivsai.co.il</a></p>
+  </div>
+</div>
+
+<style>
+  /* ─── Accessibility Widget ─── */
+  #a11y-widget {
+    position: fixed;
+    bottom: 100px;
+    left: 16px;
+    z-index: 10000;
+    font-family: 'Rubik', sans-serif;
+  }
+  #a11y-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: var(--navy, #1a2f5e);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 0.72rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(26,47,94,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  #a11y-toggle:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,47,94,0.45); }
+  #a11y-panel {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 290px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.2);
+    padding: 1.4rem;
+    direction: rtl;
+    border: 1px solid #d6e4f5;
+  }
+  #a11y-panel[hidden] { display: none; }
+  .a11y-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+  }
+  .a11y-header h2 { font-size: 1rem; font-weight: 800; color: #1a2f5e; margin: 0; }
+  .a11y-close {
+    background: #f0f6ff;
+    border: none;
+    border-radius: 8px;
+    width: 30px; height: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #4a5568;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .a11y-close:hover { background: #e2ecff; }
+  .a11y-sub { font-size: 0.8rem; color: #718096; margin-bottom: 1rem; }
+  .a11y-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+  .a11y-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: #f0f6ff;
+    border: 1.5px solid #d6e4f5;
+    border-radius: 12px;
+    padding: 10px 8px;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.78rem;
+    color: #2d3748;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .a11y-btn:hover { background: #dbeeff; border-color: #29b6e8; }
+  .a11y-btn[aria-pressed="true"] { background: #1a2f5e; color: white; border-color: #1a2f5e; }
+  .a11y-btn[aria-pressed="true"] .a11y-icon { color: #29b6e8; }
+  .a11y-icon { font-size: 1.1rem; font-weight: 900; }
+  .a11y-reset { background: #fff0f0; border-color: #fed7d7; color: #c53030; }
+  .a11y-reset:hover { background: #fed7d7; }
+  .a11y-law {
+    font-size: 0.72rem;
+    color: #a0aec0;
+    line-height: 1.5;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 0.75rem;
+    text-align: center;
+  }
+  .a11y-law a { color: #29b6e8; }
+
+  /* Accessibility modes — applied to #site-content so fixed elements (widget, WA) are unaffected */
+  #site-content.a11y-high-contrast { filter: contrast(1.7) brightness(1.05); }
+  #site-content.a11y-grayscale    { filter: grayscale(1); }
+  body.a11y-big-cursor,
+  body.a11y-big-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpolygon points='0,0 0,28 8,20 14,36 18,34 12,18 24,18' fill='%23000' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") 0 0, auto !important; }
+  #site-content.a11y-links a { text-decoration: underline !important; outline: 2px solid #29b6e8; outline-offset: 2px; }
+  #site-content.a11y-readable * { font-family: Arial, Helvetica, sans-serif !important; letter-spacing: 0.04em; word-spacing: 0.1em; }
+</style>
 
 <!-- ══════════ WHATSAPP FLOAT ══════════ -->
 <a href="https://wa.me/9720509839010" target="_blank" rel="noopener" style="
@@ -1468,12 +1814,11 @@
 
 <!-- ══════════ SCRIPTS ══════════ -->
 <script>
-  // Navbar scroll effect
+  // Navbar scroll shadow
   const nav = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   });
-  nav.classList.add('scrolled');
 
   // Mobile menu
   function toggleMenu() {
@@ -1497,13 +1842,38 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  // Form submit
+  // Form submit → WhatsApp
   function handleSubmit(e) {
     e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = '✅ הפנייה נשלחה! נחזור אליך בקרוב';
+    const f = e.target;
+    const name    = f.fullname.value.trim();
+    const company = f.company.value.trim();
+    const phone   = f.phone.value.trim();
+    const email   = f.email.value.trim();
+    const service = f.service.value;
+    const msg     = f.message.value.trim();
+
+    let text = `פנייה חדשה מהאתר:\n\n`;
+    text += `שם: ${name}\n`;
+    if (company) text += `חברה: ${company}\n`;
+    text += `טלפון: ${phone}\n`;
+    if (email)   text += `מייל: ${email}\n`;
+    if (service) text += `תחום: ${service}\n`;
+    if (msg)     text += `\nפרטים: ${msg}`;
+
+    const waUrl = `https://wa.me/9720548138800?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, '_blank');
+
+    const btn = f.querySelector('.form-submit');
+    btn.textContent = 'הפנייה נשלחה בהצלחה';
     btn.style.background = 'linear-gradient(135deg, #38a169, #2f855a)';
     btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'שלח פנייה';
+      btn.style.background = '';
+      btn.disabled = false;
+      f.reset();
+    }, 4000);
   }
 
   // Animated counter for stats
@@ -1533,7 +1903,51 @@
   const statsEl = document.querySelector('.hero-stats');
   if (statsEl) statsObs.observe(statsEl);
 
-  // Smooth active nav highlight
+  // ── Accessibility Widget ──
+  let fontSize = 100;
+  function toggleA11y() {
+    const panel = document.getElementById('a11y-panel');
+    const btn   = document.getElementById('a11y-toggle');
+    const open  = panel.hasAttribute('hidden');
+    if (open) { panel.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+    else       { panel.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+  }
+  function changeFontSize(dir) {
+    fontSize = Math.min(Math.max(fontSize + dir * 10, 80), 150);
+    document.documentElement.style.fontSize = fontSize + '%';
+  }
+  function toggleMode(cls, btnId) {
+    // cursor mode targets body; all others target #site-content so fixed elements stay intact
+    const el  = cls === 'a11y-big-cursor' ? document.body : document.getElementById('site-content');
+    const btn = document.getElementById(btnId);
+    el.classList.toggle(cls);
+    btn.setAttribute('aria-pressed', el.classList.contains(cls).toString());
+  }
+  function toggleContrast() { toggleMode('a11y-high-contrast','btn-contrast'); }
+  function toggleGray()     { toggleMode('a11y-grayscale','btn-gray'); }
+  function toggleLinks()    { toggleMode('a11y-links','btn-links'); }
+  function toggleCursor()   { toggleMode('a11y-big-cursor','btn-cursor'); }
+  function toggleReadable() { toggleMode('a11y-readable','btn-readable'); }
+  function resetA11y() {
+    const sc = document.getElementById('site-content');
+    ['a11y-high-contrast','a11y-grayscale','a11y-links','a11y-readable']
+      .forEach(c => sc.classList.remove(c));
+    document.body.classList.remove('a11y-big-cursor');
+    ['btn-contrast','btn-gray','btn-links','btn-cursor','btn-readable']
+      .forEach(id => { const b = document.getElementById(id); if(b) b.setAttribute('aria-pressed','false'); });
+    fontSize = 100;
+    document.documentElement.style.fontSize = '100%';
+  }
+  // Close panel on outside click
+  document.addEventListener('click', e => {
+    const w = document.getElementById('a11y-widget');
+    if (w && !w.contains(e.target)) {
+      document.getElementById('a11y-panel').setAttribute('hidden','');
+      document.getElementById('a11y-toggle').setAttribute('aria-expanded','false');
+    }
+  });
+
+  // ── Smooth active nav highlight ──
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
@@ -1543,7 +1957,7 @@
     });
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current
-        ? 'var(--cyan)' : '';
+        ? 'var(--mid)' : '';
     });
   });
 </script>
