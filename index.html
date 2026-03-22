@@ -4,7 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>אביב שירותים והתקנות | חשמל, תקשורת ואוטומציה חכמה | avivsai.co.il</title>
-  <meta name="description" content="אביב שירותים והתקנות – מומחים בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך. תכנון, אינטגרציה וביצוע מקצועי. עזריקם ומרכז הארץ." />
+  <meta name="description" content="אביב שירותים והתקנות – מומחים בחשמל, מצלמות אבטחה, תקשורת ורשתות ואוטומציה חכמה במתח נמוך. שירות מקצועי עזריקם ומרכז הארץ." />
+  <meta name="keywords" content="חשמלאי, מצלמות אבטחה, תקשורת, רשתות, אוטומציה, בקרת כניסה, גילוי אש, חדר שרתים, מתח נמוך, עזריקם, מרכז הארץ, אביב שירותים" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://avivsai.co.il/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://avivsai.co.il/" />
+  <meta property="og:title" content="אביב שירותים והתקנות | חשמל, תקשורת ואוטומציה" />
+  <meta property="og:description" content="מומחים בחשמל, מצלמות אבטחה, תקשורת ואוטומציה חכמה. שירות מקצועי במרכז הארץ." />
+  <meta property="og:image" content="https://avivsai.co.il/logo.png" />
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:site_name" content="אביב שירותים והתקנות" />
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "אביב שירותים והתקנות",
+    "description": "מומחים בחשמל, מצלמות אבטחה, תקשורת ורשתות ואוטומציה חכמה במתח נמוך",
+    "telephone": "+972-54-813-8800",
+    "email": "office@avivsai.co.il",
+    "url": "https://avivsai.co.il",
+    "logo": "https://avivsai.co.il/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "עזריקם",
+      "addressRegion": "מרכז",
+      "addressCountry": "IL"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 31.8, "longitude": 34.9 },
+      "geoRadius": "60000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "שירותים",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "התקנת מצלמות אבטחה" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "תקשורת ורשתות" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "עבודות חשמל" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "בקרת כניסה ואינטרקום" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "אוטומציה חכמה" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "גילוי אש וחירום" } }
+      ]
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -874,6 +924,41 @@
     .social-btn:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.35); transform: translateY(-2px); }
 
     /* ─── Responsive ─── */
+    /* ─── Photo Strip ─── */
+    #photo-strip { padding: 0; overflow: hidden; }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 280px;
+    }
+    .photo-cell {
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.4s ease;
+    }
+    .photo-cell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(26,47,94,0.25), rgba(26,47,94,0.5));
+    }
+    .photo-cell:hover { transform: scale(1.03); }
+    .photo-label {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      color: white;
+      font-family: 'Rubik', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(41,182,232,0.88);
+      padding: 5px 14px;
+      border-radius: 20px;
+      z-index: 1;
+    }
+
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid   { grid-template-columns: 1fr 1fr; }
@@ -895,18 +980,36 @@
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .form-row    { grid-template-columns: 1fr; }
       .elec-features { grid-template-columns: 1fr; }
-      .about-pillars { grid-template-columns: 1fr; }
+      .about-pillars { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; position: fixed; top: 0; right: 0; width: 80vw; height: 100vh; background: white; box-shadow: -8px 0 40px rgba(0,0,0,0.15); flex-direction: column; padding: 100px 2rem 2rem; gap: 1.5rem; z-index: 999; transform: translateX(100%); transition: transform 0.35s ease; }
       .nav-links.open { transform: translateX(0); display: flex; }
       .nav-links a { color: var(--navy) !important; font-size: 1.1rem; }
       .hamburger { display: flex; position: relative; z-index: 1001; }
       .about-badge { left: 15px; }
+      /* hero mobile */
+      .hero-content { text-align: center; padding: 120px 0 60px; }
+      .hero-badge   { justify-content: center; }
+      .hero-btns    { justify-content: center; }
+      .hero-stats   { justify-content: center; }
+      .hero-desc    { margin-inline: auto; }
+      /* sections mobile centering */
+      .section-sub  { margin-inline: auto; }
+      .elec-text    { text-align: center; }
+      .elec-text .btn { margin: 0 auto; }
+      /* photo strip: 2x2 on mobile */
+      .photo-grid { grid-template-columns: repeat(2, 1fr); height: 340px; }
+      /* why grid */
+      .why-grid    { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 480px) {
       .hero-stats  { gap: 1.5rem; }
       .process-steps { grid-template-columns: 1fr; }
-      .hero-btns   { flex-direction: column; }
+      .hero-btns   { flex-direction: column; align-items: center; }
       .cta-btns    { flex-direction: column; align-items: center; }
+      .photo-grid  { grid-template-columns: 1fr 1fr; height: 280px; }
+      .why-grid    { grid-template-columns: 1fr; }
+      .about-pillars { grid-template-columns: 1fr 1fr; }
+      .nav-logo img { height: 40px; }
     }
 
     /* ─── Utility ─── */
@@ -1280,19 +1383,19 @@
 </style>
 
 <!-- ══════════ PHOTO STRIP ══════════ -->
-<section id="photo-strip" style="padding:0;overflow:hidden;">
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);height:240px;">
-    <div style="background:linear-gradient(rgba(26,47,94,0.35),rgba(26,47,94,0.35)),url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
-      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">חשמל</span>
+<section id="photo-strip">
+  <div class="photo-grid">
+    <div class="photo-cell" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop')">
+      <span class="photo-label">חשמל</span>
     </div>
-    <div style="background:linear-gradient(rgba(26,47,94,0.3),rgba(26,47,94,0.3)),url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
-      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">שרתים</span>
+    <div class="photo-cell" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80&auto=format&fit=crop')">
+      <span class="photo-label">שרתים</span>
     </div>
-    <div style="background:linear-gradient(rgba(26,47,94,0.3),rgba(26,47,94,0.3)),url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
-      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">אבטחה</span>
+    <div class="photo-cell" style="background-image:url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&q=80&auto=format&fit=crop')">
+      <span class="photo-label">אבטחה</span>
     </div>
-    <div style="background:linear-gradient(rgba(26,47,94,0.3),rgba(26,47,94,0.3)),url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop') center/cover;position:relative;overflow:hidden;">
-      <span style="position:absolute;bottom:14px;right:14px;color:white;font-family:'Rubik',sans-serif;font-size:0.85rem;font-weight:600;background:rgba(41,182,232,0.85);padding:4px 12px;border-radius:20px;">תקשורת</span>
+    <div class="photo-cell" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop')">
+      <span class="photo-label">תקשורת</span>
     </div>
   </div>
 </section>
@@ -1427,7 +1530,7 @@
 <section id="why" class="section">
   <div class="container">
     <div class="text-center fade-up" style="margin-bottom:3rem;">
-      <div class="tag">למה אביב</div>
+      <div class="tag">למה אנחנו</div>
       <h2 class="section-title">למה לקוחות בוחרים בנו</h2>
     </div>
     <div class="why-grid">
