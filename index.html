@@ -1525,7 +1525,8 @@
         </div>
       </div>
       <div class="contact-form fade-up">
-        <form onsubmit="handleSubmit(event)">
+        <form name="contact" data-netlify="true" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="contact" />
           <div class="form-row">
             <div class="form-group">
               <label for="fullname">שם מלא</label>
@@ -1843,7 +1844,7 @@
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
   // Form submit → WhatsApp
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const f = e.target;
     const name    = f.fullname.value.trim();
@@ -1853,6 +1854,16 @@
     const service = f.service.value;
     const msg     = f.message.value.trim();
 
+    // שליחה ל-Netlify Forms
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(f)).toString()
+      });
+    } catch (_) {}
+
+    // פתיחת וואטסאפ עם פרטי הפנייה
     let text = `פנייה חדשה מהאתר:\n\n`;
     text += `שם: ${name}\n`;
     if (company) text += `חברה: ${company}\n`;
