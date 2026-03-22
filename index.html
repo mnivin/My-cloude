@@ -1013,7 +1013,6 @@
         position: fixed; inset: 0;
         background: rgba(0,0,0,0.45);
         z-index: 1000;
-        backdrop-filter: blur(2px);
       }
       #nav-backdrop.open { display: block; }
       .about-badge { left: 15px; }
@@ -1986,18 +1985,15 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-  // Form submit → WhatsApp
+  // Form submit → Netlify (email + WhatsApp via server function)
   async function handleSubmit(e) {
     e.preventDefault();
-    const f = e.target;
-    const name    = f.fullname.value.trim();
-    const company = f.company.value.trim();
-    const phone   = f.phone.value.trim();
-    const email   = f.email.value.trim();
-    const service = f.service.value;
-    const msg     = f.message.value.trim();
+    const f   = e.target;
+    const btn = f.querySelector('.form-submit');
 
-    // שליחה ל-Netlify Forms
+    btn.textContent = 'שולח...';
+    btn.disabled = true;
+
     try {
       await fetch('/', {
         method: 'POST',
@@ -2006,22 +2002,8 @@
       });
     } catch (_) {}
 
-    // פתיחת וואטסאפ עם פרטי הפנייה
-    let text = `פנייה חדשה מהאתר:\n\n`;
-    text += `שם: ${name}\n`;
-    if (company) text += `חברה: ${company}\n`;
-    text += `טלפון: ${phone}\n`;
-    if (email)   text += `מייל: ${email}\n`;
-    if (service) text += `תחום: ${service}\n`;
-    if (msg)     text += `\nפרטים: ${msg}`;
-
-    const waUrl = `https://wa.me/9720548138800?text=${encodeURIComponent(text)}`;
-    window.open(waUrl, '_blank');
-
-    const btn = f.querySelector('.form-submit');
-    btn.textContent = 'הפנייה נשלחה בהצלחה';
+    btn.textContent = '✓ הפנייה נשלחה בהצלחה';
     btn.style.background = 'linear-gradient(135deg, #38a169, #2f855a)';
-    btn.disabled = true;
     setTimeout(() => {
       btn.textContent = 'שלח פנייה';
       btn.style.background = '';
