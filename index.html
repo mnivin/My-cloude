@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אביב שירותים והתקנות | חשמל, תקשורת ואוטומציה חכמה | avivsai.co.il</title>
+  <meta name="description" content="אביב שירותים והתקנות – מומחים בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך. תכנון, אינטגרציה וביצוע מקצועי. עזריקם ומרכז הארץ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #1a2f5e;
+      --blue:   #1e5a9c;
+      --mid:    #2b7ec1;
+      --cyan:   #29b6e8;
+      --gray:   #4a5568;
+      --light:  #f0f6ff;
+      --white:  #ffffff;
+      --text:   #2d3748;
+      --border: #d6e4f5;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Heebo', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      direction: rtl;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    .section { padding: 90px 0; }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      max-width: 650px;
+    }
+    .accent { color: var(--cyan); }
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(41,182,232,0.1);
+      border: 1px solid rgba(41,182,232,0.3);
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--mid));
+      color: var(--white);
+      box-shadow: 0 8px 24px rgba(41,182,232,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(41,182,232,0.45); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--mid));
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── Navbar ─── */
+    nav {
+      position: fixed;
+      top: 0; inset-inline: 0;
+      z-index: 1000;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+    nav.scrolled {
+      background: rgba(26,47,94,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .nav-logo img {
+      height: 54px;
+      filter: brightness(0) invert(1);
+      transition: opacity 0.2s;
+    }
+    .nav-logo img:hover { opacity: 0.85; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.97rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+      width: 0; height: 2px;
+      background: var(--cyan);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--cyan), var(--mid));
+      color: var(--white) !important;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 16px rgba(41,182,232,0.35);
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(41,182,232,0.45); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 26px; height: 2.5px; background: white; border-radius: 2px; transition: all 0.3s; }
+
+    /* ─── Hero ─── */
+    #hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(26,47,94,0.92) 0%, rgba(30,90,156,0.85) 50%, rgba(41,182,232,0.75) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="g" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1" fill="%2329b6e8" opacity="0.15"/></pattern></defs><rect width="1200" height="800" fill="%231a2f5e"/><rect width="1200" height="800" fill="url(%23g)"/><line x1="0" y1="200" x2="1200" y2="400" stroke="%2329b6e8" stroke-width="0.5" opacity="0.1"/><line x1="0" y1="500" x2="1200" y2="200" stroke="%2329b6e8" stroke-width="0.5" opacity="0.1"/><line x1="200" y1="0" x2="400" y2="800" stroke="%2329b6e8" stroke-width="0.5" opacity="0.08"/></svg>');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-particles::before, .hero-particles::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(41,182,232,0.15), transparent 70%);
+    }
+    .hero-particles::before { width: 600px; height: 600px; top: -150px; left: -150px; }
+    .hero-particles::after  { width: 400px; height: 400px; bottom: -100px; right: 10%; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 0 80px;
+      max-width: 780px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(41,182,232,0.15);
+      border: 1px solid rgba(41,182,232,0.4);
+      color: var(--cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 7px 18px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--cyan), #7dd3f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      max-width: 620px;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-stats {
+      margin-top: 4rem;
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--white);
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      animation: bounce 2.5s ease-in-out infinite;
+    }
+    .hero-scroll svg { width: 20px; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ─── Services Teaser Strip ─── */
+    #services-strip {
+      background: var(--navy);
+      padding: 0;
+    }
+    .strip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .strip-item {
+      padding: 2.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      cursor: default;
+      transition: background 0.3s;
+    }
+    .strip-item:last-child { border-left: none; }
+    .strip-item:hover { background: rgba(41,182,232,0.08); }
+    .strip-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .strip-icon.elec { background: rgba(255,193,7,0.15); }
+    .strip-icon.comm { background: rgba(41,182,232,0.15); }
+    .strip-icon.auto { background: rgba(30,90,156,0.3); }
+    .strip-text h3 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+    .strip-text p  { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+    /* ─── About ─── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-img-wrap {
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy), var(--mid));
+      padding: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      position: relative;
+    }
+    .about-logo {
+      width: 240px;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      left: 30px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 16px 22px;
+      box-shadow: 0 12px 40px rgba(26,47,94,0.18);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .badge-icon { font-size: 1.8rem; }
+    .badge-text strong { display: block; font-size: 1.1rem; color: var(--navy); }
+    .badge-text span   { font-size: 0.8rem; color: var(--gray); }
+    .about-text { padding-bottom: 1rem; }
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .pillar {
+      background: var(--light);
+      border-radius: 14px;
+      padding: 1.2rem;
+      border-right: 4px solid var(--cyan);
+    }
+    .pillar-icon { font-size: 1.4rem; margin-bottom: 6px; }
+    .pillar h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .pillar p  { font-size: 0.82rem; color: var(--gray); line-height: 1.5; }
+
+    /* ─── Services ─── */
+    #services { background: var(--light); }
+    .services-intro {
+      margin-bottom: 3.5rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2.2rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--mid));
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,47,94,0.12); border-color: transparent; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .service-icon.yellow { background: rgba(255,193,7,0.12); }
+    .service-icon.blue   { background: rgba(41,182,232,0.12); }
+    .service-icon.navy   { background: rgba(26,47,94,0.1); }
+    .service-icon.green  { background: rgba(56,178,172,0.12); }
+    .service-icon.purple { background: rgba(128,90,213,0.1); }
+    .service-icon.orange { background: rgba(237,137,54,0.1); }
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .service-list li {
+      font-size: 0.85rem;
+      color: var(--gray);
+      padding-right: 18px;
+      position: relative;
+    }
+    .service-list li::before {
+      content: '✓';
+      position: absolute;
+      right: 0;
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    /* ─── Electrical Feature Banner ─── */
+    #elec-banner {
+      background: linear-gradient(135deg, #1a2f5e 0%, #0f1e3d 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    #elec-banner::before {
+      content: '⚡';
+      position: absolute;
+      font-size: 20rem;
+      opacity: 0.03;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .elec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .elec-text .tag { margin-bottom: 1rem; }
+    .elec-text h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+    .elec-text p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .elec-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .elec-feat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: background 0.25s;
+    }
+    .elec-feat:hover { background: rgba(41,182,232,0.1); }
+    .elec-feat-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .elec-feat h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .elec-feat p  { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+    /* ─── Integration Section ─── */
+    #integration { background: var(--white); }
+    .integration-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .integration-diagram {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+    .hub {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: 0 0 0 20px rgba(30,90,156,0.1), 0 0 0 40px rgba(30,90,156,0.05);
+      position: relative;
+      z-index: 2;
+    }
+    .orbit-item {
+      position: absolute;
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 6px 24px rgba(26,47,94,0.1);
+      transition: transform 0.3s;
+    }
+    .orbit-item:hover { transform: scale(1.15); border-color: var(--cyan); }
+    .orbit-item:nth-child(2) { top: 10px;  right: 20px; }
+    .orbit-item:nth-child(3) { top: 10px;  left: 20px; }
+    .orbit-item:nth-child(4) { bottom: 40px; right: 0; }
+    .orbit-item:nth-child(5) { bottom: 40px; left: 0; }
+    .orbit-item:nth-child(6) { top: 50%;   right: -10px; transform: translateY(-50%); }
+    .orbit-item:nth-child(7) { top: 50%;   left: -10px;  transform: translateY(-50%); }
+    .orbit-connector {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .integration-text p {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .integration-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .integration-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .check-icon {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 0.7rem;
+      color: white;
+    }
+
+    /* ─── Process ─── */
+    #process { background: var(--light); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      right: 12.5%;
+      left: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--mid), var(--navy));
+      opacity: 0.25;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      width: 76px; height: 76px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin: 0 auto 1.2rem;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .process-step:hover .step-num {
+      background: linear-gradient(135deg, var(--cyan), var(--mid));
+      border-color: transparent;
+      box-shadow: 0 8px 24px rgba(41,182,232,0.3);
+    }
+    .process-step h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .process-step p  { font-size: 0.87rem; color: var(--gray); line-height: 1.6; }
+
+    /* ─── Why Us ─── */
+    #why { background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .why-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .why-card:hover {
+      box-shadow: 0 16px 40px rgba(26,47,94,0.1);
+      transform: translateY(-4px);
+      border-color: rgba(41,182,232,0.3);
+    }
+    .why-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .why-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+    .why-card p  { font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+
+    /* ─── CTA ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, var(--mid) 100%);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1" fill="%2329b6e8" opacity="0.12"/></svg>');
+    }
+    #cta .container { position: relative; z-index: 1; }
+    #cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    #cta p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem;
+      max-width: 550px;
+      margin-inline: auto;
+      line-height: 1.7;
+    }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+
+    /* ─── Contact ─── */
+    #contact { background: var(--light); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+    }
+    .contact-info h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      font-size: 1rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--cyan); }
+    .contact-link-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.25s;
+    }
+    .contact-link:hover .contact-link-icon {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .contact-form {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 40px rgba(26,47,94,0.08);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.2rem; }
+    .form-group label { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-family: 'Heebo', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      direction: rtl;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(41,182,232,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; justify-content: center; font-size: 1.05rem; padding: 16px; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-logo img {
+      height: 56px;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1rem;
+    }
+    .footer-about {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+    }
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--cyan); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+    .footer-socials { display: flex; gap: 0.75rem; }
+    .social-btn {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--cyan); border-color: var(--cyan); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid   { grid-template-columns: 1fr 1fr; }
+      .elec-grid     { grid-template-columns: 1fr; }
+      .integration-inner { grid-template-columns: 1fr; }
+      .integration-diagram { min-height: 300px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      .about-grid  { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .strip-grid  { grid-template-columns: 1fr; }
+      .strip-item  { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+      .strip-item:first-child { border-top: none; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .process-steps::before { display: none; }
+      .why-grid    { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row    { grid-template-columns: 1fr; }
+      .elec-features { grid-template-columns: 1fr; }
+      .about-pillars { grid-template-columns: 1fr; }
+      .nav-links { display: none; position: fixed; top: 0; right: 0; width: 80vw; height: 100vh; background: var(--navy); flex-direction: column; padding: 100px 2rem 2rem; gap: 1.5rem; z-index: 999; transform: translateX(100%); transition: transform 0.35s ease; }
+      .nav-links.open { transform: translateX(0); display: flex; }
+      .hamburger { display: flex; position: relative; z-index: 1001; }
+      .about-badge { left: 15px; }
+    }
+    @media (max-width: 480px) {
+      .hero-stats  { gap: 1.5rem; }
+      .process-steps { grid-template-columns: 1fr; }
+      .hero-btns   { flex-direction: column; }
+      .cta-btns    { flex-direction: column; align-items: center; }
+    }
+
+    /* ─── Utility ─── */
+    .text-center { text-align: center; }
+    .mb-0 { margin-bottom: 0 !important; }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="logo.png" alt="אביב שירותים והתקנות" />
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">אודות</a></li>
+      <li><a href="#services">שירותים</a></li>
+      <li><a href="#integration">אינטגרציה</a></li>
+      <li><a href="#process">תהליך</a></li>
+      <li><a href="#contact" class="nav-cta">צור קשר</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="hero-particles"></div>
+  <div class="container">
+    <div class="hero-content fade-up">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        חשמל · תקשורת · אוטומציה חכמה
+      </div>
+      <h1 class="hero-title">
+        פתרונות <span>חשמל ואוטומציה</span><br />
+        שמדברים זה עם זה
+      </h1>
+      <p class="hero-desc">
+        אביב שירותים והתקנות מתמחה בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך.
+        מהתכנון ועד הביצוע — הכול תחת קורת גג אחת, עם ניסיון שטח רב וידע הנדסי מעמיק.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">
+          קבל הצעת מחיר
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/></svg>
+        </a>
+        <a href="#services" class="btn btn-outline">גלה את השירותים</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">שנות ניסיון</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">500+</span>
+          <span class="stat-label">פרויקטים</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">אחריות מלאה</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">תמיכה</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#services-strip" class="hero-scroll">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    גלול למטה
+  </a>
+</section>
+
+<!-- ══════════ STRIP ══════════ -->
+<section id="services-strip">
+  <div class="strip-grid" style="max-width:1400px;margin:0 auto;">
+    <div class="strip-item">
+      <div class="strip-icon elec">⚡</div>
+      <div class="strip-text">
+        <h3>חשמל</h3>
+        <p>התקנות חשמל מקצועיות לכל סוג מבנה — מגורים, מסחר ותעשייה</p>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon comm">📡</div>
+      <div class="strip-text">
+        <h3>תקשורת ומתח נמוך</h3>
+        <p>רשתות, מצלמות, אינטרקום, בקרת כניסה וגילוי אש</p>
+      </div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-icon auto">🤖</div>
+      <div class="strip-text">
+        <h3>אוטומציה חכמה</h3>
+        <p>שילוב כל המערכות לבקרה אחת חכמה מהטלפון או המחשב</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-up">
+        <div class="about-img-wrap">
+          <img src="logo.png" alt="אביב שירותים והתקנות" class="about-logo" />
+        </div>
+        <div class="about-badge">
+          <span class="badge-icon">🏆</span>
+          <div class="badge-text">
+            <strong>מומחים מוסמכים</strong>
+            <span>חשמל, תקשורת ואוטומציה</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-up">
+        <div class="tag">מי אנחנו</div>
+        <h2 class="section-title">טכנולוגיה, ידע הנדסי<br />וניסיון שטח — יחד</h2>
+        <div class="divider"></div>
+        <p>
+          אביב שירותים והתקנות הוקמה מתוך אמונה שמערכות טובות הן מערכות שעובדות יחד.
+          לאורך השנים הרחבנו את פעילותנו לעולם החשמל — ובכל תחום אנחנו מביאים את אותה רמת מקצועיות,
+          דיוק ואחריות.
+        </p>
+        <p>
+          אנחנו מתכננים ומבצעים מערכות חשמל מלאות לצד מערכות תקשורת, מתח נמוך ואוטומציה —
+          וכשכל אלה מחוברים בצורה נכונה, הבניין כולו הופך לסביבה חכמה, יעילה ובטוחה.
+        </p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">⚡</div>
+            <h4>חשמל</h4>
+            <p>לוחות, הארקות, גנרטורים, UPS ועוד</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🔌</div>
+            <h4>מתח נמוך</h4>
+            <p>מצלמות, גלאים, אינטרקום, כבלים</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">📡</div>
+            <h4>תקשורת</h4>
+            <p>רשתות, Wi-Fi, סיב אופטי ועוד</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🤖</div>
+            <h4>אוטומציה</h4>
+            <p>בקרה חכמה ושילוב כל המערכות</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SERVICES ══════════ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="services-intro text-center fade-up">
+      <div class="tag">מה אנחנו עושים</div>
+      <h2 class="section-title">השירותים שלנו</h2>
+      <p class="section-sub" style="margin-inline:auto;">
+        פתרונות מקצועיים בחשמל, תקשורת ואוטומציה — לפרויקטים מגורים, מסחריים ותעשייתיים
+      </p>
+    </div>
+    <div class="services-grid">
+
+      <!-- חשמל -->
+      <div class="service-card fade-up">
+        <div class="service-icon yellow">⚡</div>
+        <h3>עבודות חשמל</h3>
+        <p>התקנות חשמל מקצועיות ומלאות לכל סוג מבנה, כולל עבודות שדרוג ושיפוץ.</p>
+        <ul class="service-list">
+          <li>לוחות חשמל ומנעולים</li>
+          <li>הארקה ומוגנות יתר</li>
+          <li>גנרטורים ו-UPS</li>
+          <li>תאורה חיסכונית ו-LED</li>
+          <li>חיבורים ושדרוג מונים</li>
+          <li>עבודות חשמל לתעשייה</li>
+        </ul>
+      </div>
+
+      <!-- מצלמות -->
+      <div class="service-card fade-up">
+        <div class="service-icon blue">📹</div>
+        <h3>מצלמות אבטחה ומעקב</h3>
+        <p>מערכות מצלמות חכמות לפיקוח בזמן אמת מכל מקום, עם אחסון מאובטח.</p>
+        <ul class="service-list">
+          <li>מצלמות IP חכמות</li>
+          <li>צפייה מרחוק מהנייד</li>
+          <li>זיהוי פנים ורכב</li>
+          <li>הקלטה וארכיון ענן</li>
+          <li>התראות חכמות בזמן אמת</li>
+        </ul>
+      </div>
+
+      <!-- בקרת כניסה -->
+      <div class="service-card fade-up">
+        <div class="service-icon navy">🔐</div>
+        <h3>בקרת כניסה ואבטחה</h3>
+        <p>ניהול גישה חכם לפי הרשאות — לאנשים, כרטיסים, שעות ואזורים.</p>
+        <ul class="service-list">
+          <li>קורא כרטיסים וטביעת אצבע</li>
+          <li>אינטרקום וידאו חכם</li>
+          <li>גישה מרחוק מהסמארטפון</li>
+          <li>שליטה לפי שעות ואזורים</li>
+          <li>דוחות כניסות ויציאות</li>
+        </ul>
+      </div>
+
+      <!-- גילוי אש -->
+      <div class="service-card fade-up">
+        <div class="service-icon orange">🔥</div>
+        <h3>גילוי אש וחירום</h3>
+        <p>מערכות גילוי אש וגז עם התראה אוטומטית לכוחות ביטחון וכיבוי.</p>
+        <ul class="service-list">
+          <li>גלאי עשן, חום וגז</li>
+          <li>לוח בקרה מרכזי</li>
+          <li>ספרינקלרים וכיבוי אש</li>
+          <li>חיבור לרכזת ענן</li>
+          <li>תחזוקה ובדיקות תקופתיות</li>
+        </ul>
+      </div>
+
+      <!-- תקשורת ורשתות -->
+      <div class="service-card fade-up">
+        <div class="service-icon green">🌐</div>
+        <h3>תקשורת ורשתות</h3>
+        <p>תשתיות תקשורת מתקדמות לעסקים ומגורים — מהירות, אמינות ומאובטחת.</p>
+        <ul class="service-list">
+          <li>כבלי Cat6/Cat7 וסיב אופטי</li>
+          <li>Wi-Fi ארגוני מקצועי</li>
+          <li>VoIP ומרכזיות טלפון</li>
+          <li>חדרי שרתים ו-Rack</li>
+          <li>ניהול רשת מרחוק</li>
+        </ul>
+      </div>
+
+      <!-- אוטומציה -->
+      <div class="service-card fade-up">
+        <div class="service-icon purple">🤖</div>
+        <h3>אוטומציה ובקרה חכמה</h3>
+        <p>שילוב כל מערכות הבניין לניהול אחד חכם — תאורה, מיזוג, גישה ועוד.</p>
+        <ul class="service-list">
+          <li>בקרת תאורה ומיזוג</li>
+          <li>ניהול אנרגיה חכם</li>
+          <li>אפליקציה לניהול הכול</li>
+          <li>תזמונים ולוחות זמנים</li>
+          <li>שילוב KNX / Modbus / BACnet</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ ELECTRICAL BANNER ══════════ -->
+<section id="elec-banner">
+  <div class="container">
+    <div class="elec-grid">
+      <div class="elec-text fade-up">
+        <div class="tag">⚡ התמחות חדשה</div>
+        <h2>חשמל מקצועי —<br /><span class="accent">חלק מהפתרון הכולל</span></h2>
+        <p>
+          הרחבנו את פעילותנו לעולם החשמל המלא. כיום אנחנו מספקים פתרון אחד אינטגרטיבי שבו עבודות החשמל
+          ומערכות המתח הנמוך מתוכננות ומבוצעות יחד — על ידי אותה חברה, עם אותה רמת איכות ואחריות.
+        </p>
+        <a href="#contact" class="btn btn-primary">דבר איתנו על הפרויקט שלך</a>
+      </div>
+      <div class="elec-features fade-up">
+        <div class="elec-feat">
+          <div class="elec-feat-icon">🏠</div>
+          <h4>מגורים</h4>
+          <p>דירות, בתים פרטיים ובניינים — מהבסיס עד האוטומציה</p>
+        </div>
+        <div class="elec-feat">
+          <div class="elec-feat-icon">🏢</div>
+          <h4>מסחרי</h4>
+          <p>משרדים, מסעדות, מרכזי קניות ועסקים</p>
+        </div>
+        <div class="elec-feat">
+          <div class="elec-feat-icon">🏭</div>
+          <h4>תעשייתי</h4>
+          <p>מפעלים, מחסנים ומתקנים בעלי עוצמה גבוהה</p>
+        </div>
+        <div class="elec-feat">
+          <div class="elec-feat-icon">🛡️</div>
+          <h4>ציבורי ובטחוני</h4>
+          <p>מוסדות ציבור, בתי ספר ומוסדות ביטחון</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ INTEGRATION ══════════ -->
+<section id="integration" class="section">
+  <div class="container">
+    <div class="integration-inner">
+      <div class="integration-text fade-up">
+        <div class="tag">הסינרגיה שלנו</div>
+        <h2 class="section-title">מערכות שמדברות<br />זו עם זו</h2>
+        <div class="divider"></div>
+        <p>
+          הייחוד שלנו הוא בחיבור: כשחשמל, תקשורת ואוטומציה מתוכננים יחד מהיום הראשון,
+          התוצאה היא בניין שחוסך אנרגיה, מייעל תהליכים ומספק חוויית שליטה שלמה.
+        </p>
+        <p>
+          גלאי נוכחות מכבה תאורה ומיזוג אוטומטית. מצלמות מתואמות עם בקרת הכניסה.
+          תקלת חשמל מייצרת התראה מיידית. הכול ניהול בלחיצה אחת.
+        </p>
+        <ul class="integration-list">
+          <li>
+            <span class="check-icon">✓</span>
+            גלאי נוכחות ותאורה חכמה — חיסכון של עד 40% בחשמל
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            מצלמות מסונכרנות עם מערכת הכניסה — אבטחה מלאה
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            בקרה ממרחק — מחשב, טאבלט או סמארטפון
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            דוחות חכמים ואנליטיקה בזמן אמת
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            שדרוג הדרגתי — מתחילים בחשמל ומרחיבים לאוטומציה
+          </li>
+        </ul>
+      </div>
+      <div class="integration-diagram fade-up">
+        <div class="hub">🏠</div>
+        <div class="orbit-item" title="חשמל">⚡</div>
+        <div class="orbit-item" title="מצלמות">📹</div>
+        <div class="orbit-item" title="גילוי אש">🔥</div>
+        <div class="orbit-item" title="תקשורת">🌐</div>
+        <div class="orbit-item" title="בקרת כניסה">🔐</div>
+        <div class="orbit-item" title="אוטומציה">🤖</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROCESS ══════════ -->
+<section id="process" class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="tag">איך זה עובד</div>
+      <h2 class="section-title">תהליך העבודה שלנו</h2>
+      <p class="section-sub" style="margin-inline:auto;">
+        מהפגישה הראשונה עד לאחריות שלאחר ההתקנה — אנחנו לצדכם בכל שלב
+      </p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">💬</div>
+        <h3>ייעוץ ואבחון</h3>
+        <p>פגישה להבנת הצרכים, סקר שטח ותכנון ראשוני ללא עלות</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">📐</div>
+        <h3>תכנון ואפיון</h3>
+        <p>תכנון מפורט של כל המערכות, כולל תכניות ומפרטים טכניים</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">🔧</div>
+        <h3>התקנה מקצועית</h3>
+        <p>ביצוע על ידי צוות מוסמך, נקי ומסודר — לפי לוח הזמנים המוסכם</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">✅</div>
+        <h3>בדיקה ואחריות</h3>
+        <p>בדיקות מלאות, הדרכה ואחריות מלאה עם תמיכה שוטפת</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ WHY US ══════════ -->
+<section id="why" class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="tag">למה אביב</div>
+      <h2 class="section-title">המחויבות שלנו אליך</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <span class="why-icon">🏗️</span>
+        <h3>ניסיון שטח אמיתי</h3>
+        <p>מאות פרויקטים בכל סוגי המבנים — מדירה פרטית ועד מתקן תעשייתי גדול</p>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">🔗</span>
+        <h3>פתרון אחד לכולם</h3>
+        <p>חשמל, תקשורת ואוטומציה — כל הדיסציפלינות תחת ניהול אחד, בלי ריבוי קבלנים</p>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">📋</span>
+        <h3>מוסמכים ומורשים</h3>
+        <p>כל הצוות מוסמך ומורשה בחשמל ומתח נמוך — עמידה מלאה בתקני הבטיחות</p>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">💡</span>
+        <h3>חיסכון אנרגיה</h3>
+        <p>תכנון נכון של חשמל ואוטומציה ביחד מביא לחיסכון מדיד בחשבון החשמל</p>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">🛡️</span>
+        <h3>אחריות ותמיכה</h3>
+        <p>אחריות מלאה על כל התקנה עם תמיכה טכנית 24/7 ותחזוקה שוטפת</p>
+      </div>
+      <div class="why-card fade-up">
+        <span class="why-icon">📱</span>
+        <h3>שליטה מהסמארטפון</h3>
+        <p>כל מה שאנחנו מתקינים — אפשר לנהל ולפקח עליו מרחוק בקלות ובנוחות</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CTA ══════════ -->
+<section id="cta">
+  <div class="container">
+    <div class="fade-up">
+      <div class="tag" style="margin-bottom:1.2rem;">צור קשר עוד היום</div>
+      <h2>מוכן לשדרג את הנכס שלך?</h2>
+      <p>בוא נדבר על הפרויקט — קבל ייעוץ ראשוני חינם והצעת מחיר מפורטת</p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn btn-white">צור קשר עכשיו</a>
+        <a href="tel:054-8138800" class="btn btn-outline">📞 054-813-8800</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-up">
+        <div class="tag">דברו איתנו</div>
+        <h3>נשמח לשמוע ממך</h3>
+        <p>
+          בין אם מדובר בפרויקט גדול או בשאלה פשוטה — צוות אביב שירותים והתקנות
+          כאן בשבילך. ייעוץ ראשוני ללא עלות.
+        </p>
+        <div class="contact-links">
+          <a href="tel:054-8138800" class="contact-link">
+            <div class="contact-link-icon">📞</div>
+            054-813-8800 (משרד)
+          </a>
+          <a href="tel:050-9839010" class="contact-link">
+            <div class="contact-link-icon">📱</div>
+            050-983-9010 (אביב)
+          </a>
+          <a href="mailto:office@avivsai.co.il" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            office@avivsai.co.il
+          </a>
+          <a href="https://maps.google.com/?q=התפוז+330+עזריקם" target="_blank" class="contact-link">
+            <div class="contact-link-icon">📍</div>
+            התפוז 330, עזריקם
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">🕐</div>
+            א'–ה' 07:00–19:00 | ו' 07:00–14:00
+          </a>
+        </div>
+      </div>
+      <div class="contact-form fade-up">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">שם פרטי</label>
+              <input type="text" id="fname" name="fname" placeholder="ישראל" required />
+            </div>
+            <div class="form-group">
+              <label for="lname">שם משפחה</label>
+              <input type="text" id="lname" name="lname" placeholder="ישראלי" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">טלפון</label>
+              <input type="tel" id="phone" name="phone" placeholder="050-0000000" required />
+            </div>
+            <div class="form-group">
+              <label for="email">אימייל</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">סוג השירות</label>
+            <select id="service" name="service">
+              <option value="">-- בחר שירות --</option>
+              <option>עבודות חשמל</option>
+              <option>מצלמות אבטחה</option>
+              <option>בקרת כניסה</option>
+              <option>גילוי אש וחירום</option>
+              <option>תקשורת ורשתות</option>
+              <option>אוטומציה חכמה</option>
+              <option>פתרון אינטגרטיבי מלא</option>
+              <option>אחר</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">פרטים נוספים</label>
+            <textarea id="message" name="message" placeholder="ספר לנו על הפרויקט שלך..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            שלח פנייה ✉️
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="logo.png" alt="אביב שירותים והתקנות" />
+        </div>
+        <p class="footer-about">
+          מומחים בחשמל, מערכות תקשורת ואוטומציה חכמה במתח נמוך.
+          פתרונות מלאים מהתכנון ועד הביצוע — תחת קורת גג אחת.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul class="footer-links">
+          <li><a href="#services">עבודות חשמל</a></li>
+          <li><a href="#services">מצלמות אבטחה</a></li>
+          <li><a href="#services">בקרת כניסה</a></li>
+          <li><a href="#services">גילוי אש</a></li>
+          <li><a href="#services">תקשורת ורשתות</a></li>
+          <li><a href="#services">אוטומציה חכמה</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul class="footer-links">
+          <li><a href="#about">אודות</a></li>
+          <li><a href="#services">שירותים</a></li>
+          <li><a href="#integration">אינטגרציה</a></li>
+          <li><a href="#process">תהליך העבודה</a></li>
+          <li><a href="#why">למה אנחנו</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>צור קשר</h4>
+        <ul class="footer-links">
+          <li><a href="tel:054-8138800">📞 054-813-8800</a></li>
+          <li><a href="tel:050-9839010">📱 050-983-9010</a></li>
+          <li><a href="mailto:office@avivsai.co.il">✉️ office@avivsai.co.il</a></li>
+          <li><a href="#">📍 התפוז 330, עזריקם</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 אביב שירותים והתקנות | עוסק מורשה 200712610 | <a href="mailto:office@avivsai.co.il" style="color:rgba(255,255,255,0.4);text-decoration:none;">avivsai.co.il</a></p>
+      <div class="footer-socials">
+        <a href="https://wa.me/9720509839010" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+        <a href="mailto:office@avivsai.co.il" class="social-btn" title="אימייל" style="font-size:0.8rem;font-weight:700;">✉</a>
+        <a href="tel:054-8138800" class="social-btn" title="טלפון">📞</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ WHATSAPP FLOAT ══════════ -->
+<a href="https://wa.me/9720509839010" target="_blank" rel="noopener" style="
+  position:fixed; bottom:24px; right:24px; z-index:9999;
+  width:60px; height:60px; border-radius:50%;
+  background:#25d366; color:white;
+  display:flex; align-items:center; justify-content:center;
+  font-size:28px; box-shadow:0 6px 24px rgba(37,211,102,0.45);
+  text-decoration:none; transition:transform 0.2s, box-shadow 0.2s;
+  animation:wpulse 3s ease-in-out infinite;"
+  onmouseover="this.style.transform='scale(1.12)'"
+  onmouseout="this.style.transform='scale(1)'"
+  title="שלח הודעה ב-WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+<style>@keyframes wpulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,0.7)}}</style>
+
+<!-- ══════════ SCRIPTS ══════════ -->
+<script>
+  // Navbar scroll effect
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+  nav.classList.add('scrolled');
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.getElementById('nav-links');
+    links.classList.toggle('open');
+  }
+  document.getElementById('nav-links').querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+
+  // Intersection Observer for fade-up
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✅ הפנייה נשלחה! נחזור אליך בקרוב';
+    btn.style.background = 'linear-gradient(135deg, #38a169, #2f855a)';
+    btn.disabled = true;
+  }
+
+  // Animated counter for stats
+  function animateCounter(el, target, suffix = '') {
+    let count = 0;
+    const step = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+      count = Math.min(count + step, target);
+      el.textContent = count + suffix;
+      if (count >= target) clearInterval(timer);
+    }, 20);
+  }
+  const statsObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const nums = e.target.querySelectorAll('.stat-num');
+        nums.forEach(n => {
+          const text = n.textContent;
+          if (text.includes('+')) animateCounter(n, parseInt(text), '+');
+          else if (text.includes('%')) animateCounter(n, parseInt(text), '%');
+          else if (text === '24/7') return;
+        });
+        statsObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  const statsEl = document.querySelector('.hero-stats');
+  if (statsEl) statsObs.observe(statsEl);
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--cyan)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
