@@ -135,6 +135,32 @@
       border: 2px solid rgba(255,255,255,0.6);
     }
     .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    /* ─── Skip Link ─── */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      right: 0;
+      background: var(--navy);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 0 0 8px 0;
+      font-weight: 700;
+      font-size: 1rem;
+      z-index: 99999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ─── Focus Visible ─── */
+    :focus-visible {
+      outline: 3px solid var(--cyan) !important;
+      outline-offset: 3px !important;
+    }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--cyan) !important;
+      outline-offset: 3px !important;
+      border-radius: 4px;
+    }
     .divider {
       width: 60px;
       height: 4px;
@@ -1055,8 +1081,10 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
 <div id="site-content">
 <!-- ══════════ NAVBAR ══════════ -->
+<header>
 <nav id="navbar">
   <div class="nav-inner">
     <a href="#hero" class="nav-logo">
@@ -1069,13 +1097,15 @@
       <li><a href="#process">תהליך</a></li>
       <li><a href="#contact" class="nav-cta">צור קשר</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-controls="nav-links" aria-label="פתח תפריט ניווט" type="button">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
   </div>
 </nav>
-<div id="nav-backdrop" onclick="toggleMenu()"></div>
+</header>
+<div id="nav-backdrop" onclick="toggleMenu()" aria-hidden="true"></div>
 
+<main id="main-content">
 <!-- ══════════ HERO ══════════ -->
 <section id="hero">
   <div class="hero-particles"></div>
@@ -1130,21 +1160,21 @@
 <section id="services-strip">
   <div class="strip-grid" style="max-width:1400px;margin:0 auto;">
     <div class="strip-item">
-      <div class="strip-icon comm">📡</div>
+      <div class="strip-icon comm" aria-hidden="true">📡</div>
       <div class="strip-text">
         <h3>תקשורת ואבטחה</h3>
         <p>רשתות, מצלמות, אינטרקום, בקרת כניסה וגילוי אש</p>
       </div>
     </div>
     <div class="strip-item">
-      <div class="strip-icon elec">⚡</div>
+      <div class="strip-icon elec" aria-hidden="true">⚡</div>
       <div class="strip-text">
         <h3>חשמל</h3>
         <p>התקנות חשמל מקצועיות לכל סוג מבנה: מגורים, מסחר ותעשייה</p>
       </div>
     </div>
     <div class="strip-item">
-      <div class="strip-icon auto">🤖</div>
+      <div class="strip-icon auto" aria-hidden="true">🤖</div>
       <div class="strip-text">
         <h3>אוטומציה חכמה</h3>
         <p>שילוב כל המערכות לבקרה אחת חכמה מהטלפון או המחשב</p>
@@ -1164,7 +1194,7 @@
           </div>
         </div>
         <div class="about-badge">
-          <span class="badge-icon">🏆</span>
+          <span class="badge-icon" aria-hidden="true">🏆</span>
           <div class="badge-text">
             <strong>מומחים מוסמכים</strong>
             <span>חשמל, תקשורת ואוטומציה</span>
@@ -1186,22 +1216,22 @@
         </p>
         <div class="about-pillars">
           <div class="pillar">
-            <div class="pillar-icon">⚡</div>
+            <div class="pillar-icon" aria-hidden="true">⚡</div>
             <h4>חשמל</h4>
             <p>לוחות, הארקות, גנרטורים, UPS ועוד</p>
           </div>
           <div class="pillar">
-            <div class="pillar-icon">🔌</div>
+            <div class="pillar-icon" aria-hidden="true">🔌</div>
             <h4>מתח נמוך</h4>
             <p>מצלמות, גלאים, אינטרקום, כבלים</p>
           </div>
           <div class="pillar">
-            <div class="pillar-icon">📡</div>
+            <div class="pillar-icon" aria-hidden="true">📡</div>
             <h4>תקשורת</h4>
             <p>רשתות, Wi-Fi, סיב אופטי ועוד</p>
           </div>
           <div class="pillar">
-            <div class="pillar-icon">🤖</div>
+            <div class="pillar-icon" aria-hidden="true">🤖</div>
             <h4>אוטומציה</h4>
             <p>בקרה חכמה ושילוב כל המערכות</p>
           </div>
@@ -1225,7 +1255,7 @@
 
       <!-- תקשורת ורשתות -->
       <div class="service-card fade-up">
-        <div class="service-icon green">🌐</div>
+        <div class="service-icon green" aria-hidden="true">🌐</div>
         <h3>תקשורת ורשתות</h3>
         <p>תשתיות תקשורת לעסקים ולמגורים: מהירות, יציבות ואבטחת מידע.</p>
         <ul class="service-list">
@@ -1239,7 +1269,7 @@
 
       <!-- מצלמות -->
       <div class="service-card fade-up">
-        <div class="service-icon blue">📹</div>
+        <div class="service-icon blue" aria-hidden="true">📹</div>
         <h3>מצלמות אבטחה ומעקב</h3>
         <p>מערכות מצלמות IP חכמות לפיקוח בזמן אמת, עם צפייה מהנייד ואחסון מאובטח.</p>
         <ul class="service-list">
@@ -1253,7 +1283,7 @@
 
       <!-- בקרת כניסה -->
       <div class="service-card fade-up">
-        <div class="service-icon navy">🔐</div>
+        <div class="service-icon navy" aria-hidden="true">🔐</div>
         <h3>בקרת כניסה ואינטרקום</h3>
         <p>ניהול גישה חכם לפי הרשאות, שעות ואזורים, עם אינטרקום וידאו.</p>
         <ul class="service-list">
@@ -1267,7 +1297,7 @@
 
       <!-- גילוי אש -->
       <div class="service-card fade-up">
-        <div class="service-icon orange">🔥</div>
+        <div class="service-icon orange" aria-hidden="true">🔥</div>
         <h3>אזעקה וגילוי אש</h3>
         <p>מערכות אזעקה, גילוי אש וגז עם חיבור לחברת שמירה ולוח בקרה מרכזי.</p>
         <ul class="service-list">
@@ -1281,7 +1311,7 @@
 
       <!-- חדרי שרתים -->
       <div class="service-card fade-up">
-        <div class="service-icon navy">🖥️</div>
+        <div class="service-icon navy" aria-hidden="true">🖥️</div>
         <h3>חדרי שרתים ו-Data Center</h3>
         <p>תכנון והקמה של חדרי שרתים, מהארון הבודד ועד חדר שרתים מלא.</p>
         <ul class="service-list">
@@ -1295,7 +1325,7 @@
 
       <!-- חשמל -->
       <div class="service-card fade-up">
-        <div class="service-icon yellow">⚡</div>
+        <div class="service-icon yellow" aria-hidden="true">⚡</div>
         <h3>עבודות חשמל</h3>
         <p>התקנות חשמל מלאות לכל סוג מבנה, החל מדירה ועד מפעל.</p>
         <ul class="service-list">
@@ -1309,7 +1339,7 @@
 
       <!-- אוטומציה -->
       <div class="service-card fade-up">
-        <div class="service-icon purple">🤖</div>
+        <div class="service-icon purple" aria-hidden="true">🤖</div>
         <h3>אוטומציה ובית חכם</h3>
         <p>חיבור כל מערכות הבניין לניהול אחד: תאורה, מיזוג, גישה ואבטחה.</p>
         <ul class="service-list">
@@ -1323,7 +1353,7 @@
 
       <!-- פתרונות מותאמים -->
       <div class="service-card fade-up" style="border: 2px solid rgba(41,182,232,0.3); background: linear-gradient(145deg, #f0f8ff, #ffffff);">
-        <div class="service-icon blue">🔩</div>
+        <div class="service-icon blue" aria-hidden="true">🔩</div>
         <h3>פתרונות מותאמים אישית</h3>
         <p>כל פרויקט מקבל פתרון שתפור לו בדיוק: אנחנו מתכננים, מבצעים ומלווים.</p>
         <ul class="service-list">
@@ -1446,22 +1476,22 @@
       </div>
       <div class="elec-features fade-up">
         <div class="elec-feat">
-          <div class="elec-feat-icon">🏠</div>
+          <div class="elec-feat-icon" aria-hidden="true">🏠</div>
           <h4>מגורים</h4>
           <p>דירות, בתים פרטיים ובניינים, מהבסיס ועד האוטומציה</p>
         </div>
         <div class="elec-feat">
-          <div class="elec-feat-icon">🏢</div>
+          <div class="elec-feat-icon" aria-hidden="true">🏢</div>
           <h4>מסחרי</h4>
           <p>משרדים, מסעדות, מרכזי קניות ועסקים</p>
         </div>
         <div class="elec-feat">
-          <div class="elec-feat-icon">🏭</div>
+          <div class="elec-feat-icon" aria-hidden="true">🏭</div>
           <h4>תעשייתי</h4>
           <p>מפעלים, מחסנים ומתקנים בעלי עוצמה גבוהה</p>
         </div>
         <div class="elec-feat">
-          <div class="elec-feat-icon">🛡️</div>
+          <div class="elec-feat-icon" aria-hidden="true">🛡️</div>
           <h4>ציבורי ובטחוני</h4>
           <p>מוסדות ציבור, בתי ספר ומוסדות ביטחון</p>
         </div>
@@ -1510,13 +1540,13 @@
         </ul>
       </div>
       <div class="integration-diagram fade-up">
-        <div class="hub">🏠</div>
-        <div class="orbit-item" title="חשמל">⚡</div>
-        <div class="orbit-item" title="מצלמות">📹</div>
-        <div class="orbit-item" title="גילוי אש">🔥</div>
-        <div class="orbit-item" title="תקשורת">🌐</div>
-        <div class="orbit-item" title="בקרת כניסה">🔐</div>
-        <div class="orbit-item" title="אוטומציה">🤖</div>
+        <div class="hub" aria-hidden="true">🏠</div>
+        <div class="orbit-item" aria-hidden="true">⚡</div>
+        <div class="orbit-item" aria-hidden="true">📹</div>
+        <div class="orbit-item" aria-hidden="true">🔥</div>
+        <div class="orbit-item" aria-hidden="true">🌐</div>
+        <div class="orbit-item" aria-hidden="true">🔐</div>
+        <div class="orbit-item" aria-hidden="true">🤖</div>
       </div>
     </div>
   </div>
@@ -1534,22 +1564,22 @@
     </div>
     <div class="process-steps">
       <div class="process-step fade-up">
-        <div class="step-num">💬</div>
+        <div class="step-num" aria-hidden="true">💬</div>
         <h3>ייעוץ ואבחון</h3>
         <p>פגישה להבנת הצרכים, סקר שטח ותכנון ראשוני ללא עלות</p>
       </div>
       <div class="process-step fade-up">
-        <div class="step-num">📐</div>
+        <div class="step-num" aria-hidden="true">📐</div>
         <h3>תכנון ואפיון</h3>
         <p>תכנון מפורט של כל המערכות, כולל תכניות ומפרטים טכניים</p>
       </div>
       <div class="process-step fade-up">
-        <div class="step-num">🔧</div>
+        <div class="step-num" aria-hidden="true">🔧</div>
         <h3>התקנה מקצועית</h3>
         <p>ביצוע על ידי צוות מוסמך, נקי ומסודר, לפי לוח הזמנים המוסכם</p>
       </div>
       <div class="process-step fade-up">
-        <div class="step-num">✅</div>
+        <div class="step-num" aria-hidden="true">✅</div>
         <h3>בדיקה ואחריות</h3>
         <p>בדיקות מלאות, הדרכה ואחריות מלאה עם תמיכה שוטפת</p>
       </div>
@@ -1566,32 +1596,32 @@
     </div>
     <div class="why-grid">
       <div class="why-card fade-up">
-        <span class="why-icon">🏗️</span>
+        <span class="why-icon" aria-hidden="true">🏗️</span>
         <h3>ניסיון שטח אמיתי</h3>
         <p>מאות פרויקטים בכל סוגי המבנים, מדירה פרטית ועד מתקן תעשייתי גדול</p>
       </div>
       <div class="why-card fade-up">
-        <span class="why-icon">🔗</span>
+        <span class="why-icon" aria-hidden="true">🔗</span>
         <h3>פתרון אחד לכולם</h3>
         <p>חשמל, תקשורת ואוטומציה: כל הדיסציפלינות תחת ניהול אחד, בלי ריבוי קבלנים</p>
       </div>
       <div class="why-card fade-up">
-        <span class="why-icon">📋</span>
+        <span class="why-icon" aria-hidden="true">📋</span>
         <h3>מוסמכים ומורשים</h3>
         <p>כל הצוות מוסמך ומורשה בחשמל ומתח נמוך, עמידה מלאה בתקני הבטיחות</p>
       </div>
       <div class="why-card fade-up">
-        <span class="why-icon">💡</span>
+        <span class="why-icon" aria-hidden="true">💡</span>
         <h3>חיסכון אנרגיה</h3>
         <p>תכנון נכון של חשמל ואוטומציה ביחד מביא לחיסכון מדיד בחשבון החשמל</p>
       </div>
       <div class="why-card fade-up">
-        <span class="why-icon">🛡️</span>
+        <span class="why-icon" aria-hidden="true">🛡️</span>
         <h3>אחריות ותמיכה</h3>
         <p>אחריות מלאה על כל התקנה עם תמיכה טכנית 24/7 ותחזוקה שוטפת</p>
       </div>
       <div class="why-card fade-up">
-        <span class="why-icon">📱</span>
+        <span class="why-icon" aria-hidden="true">📱</span>
         <h3>שליטה מהסמארטפון</h3>
         <p>כל מה שאנחנו מתקינים ניתן לניהול ופיקוח מרחוק, בקלות ובנוחות</p>
       </div>
@@ -1632,7 +1662,7 @@
             </div>
             054-813-8800
           </a>
-          <a href="https://wa.me/9720509839010" target="_blank" rel="noopener" class="contact-link">
+          <a href="https://wa.me/9720509839010" target="_blank" rel="noopener" class="contact-link" aria-label="שלח הודעה ב-WhatsApp (נפתח בחלון חדש)">
             <div class="contact-link-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#25d366">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -1648,14 +1678,14 @@
             </div>
             office@avivsai.co.il
           </a>
-          <a href="https://maps.google.com/?q=התפוז+330+עזריקם" target="_blank" class="contact-link">
-            <div class="contact-link-icon">📍</div>
+          <a href="https://maps.google.com/?q=התפוז+330+עזריקם" target="_blank" class="contact-link" aria-label="נווט לכתובת במפות גוגל (נפתח בחלון חדש)">
+            <div class="contact-link-icon" aria-hidden="true">📍</div>
             התפוז 330, עזריקם
           </a>
-          <a href="#" class="contact-link">
-            <div class="contact-link-icon">🕐</div>
+          <div class="contact-link">
+            <div class="contact-link-icon" aria-hidden="true">🕐</div>
             א'–ה' 07:00–19:00 | ו' 07:00–14:00
-          </a>
+          </div>
         </div>
       </div>
       <div class="contact-form fade-up">
@@ -1664,21 +1694,21 @@
           <div class="form-row">
             <div class="form-group">
               <label for="fullname">שם מלא</label>
-              <input type="text" id="fullname" name="fullname" placeholder="שם מלא" required />
+              <input type="text" id="fullname" name="fullname" placeholder="שם מלא" autocomplete="name" required />
             </div>
             <div class="form-group">
               <label for="company">שם חברה</label>
-              <input type="text" id="company" name="company" placeholder="שם העסק / הארגון" />
+              <input type="text" id="company" name="company" placeholder="שם העסק / הארגון" autocomplete="organization" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="phone">טלפון</label>
-              <input type="tel" id="phone" name="phone" placeholder="05X XXXXXXX" required />
+              <input type="tel" id="phone" name="phone" placeholder="05X XXXXXXX" autocomplete="tel" required />
             </div>
             <div class="form-group">
               <label for="email">דוא"ל</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" />
+              <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
             </div>
           </div>
           <div class="form-group">
@@ -1755,6 +1785,9 @@
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 אביב שירותים והתקנות | עוסק מורשה 200712610 | <a href="mailto:office@avivsai.co.il" style="color:rgba(255,255,255,0.4);text-decoration:none;">avivsai.co.il</a></p>
+<p style="margin-top:0.5rem;font-size:0.82rem;opacity:0.7;">
+  <a href="/accessibility.html" style="color:rgba(255,255,255,0.8);text-decoration:underline;">הצהרת נגישות</a>
+</p>
       <div class="footer-socials">
         <a href="tel:054-8138800" class="social-btn" title="054-813-8800">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1769,6 +1802,7 @@
     </div>
   </div>
 </footer>
+</main>
 </div><!-- /site-content -->
 
 <!-- ══════════ ACCESSIBILITY MENU ══════════ -->
@@ -1930,7 +1964,7 @@
 </style>
 
 <!-- ══════════ WHATSAPP FLOAT ══════════ -->
-<a href="https://wa.me/9720509839010" target="_blank" rel="noopener" class="wa-float" title="שלח הודעה ב-WhatsApp">
+<a href="https://wa.me/9720509839010" target="_blank" rel="noopener" class="wa-float" aria-label="שלח הודעה ב-WhatsApp (נפתח בחלון חדש)">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="white">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
@@ -1964,13 +1998,19 @@
   function toggleMenu() {
     const links    = document.getElementById('nav-links');
     const backdrop = document.getElementById('nav-backdrop');
-    links.classList.toggle('open');
+    const btn      = document.getElementById('hamburger');
+    const isOpen   = links.classList.toggle('open');
     backdrop.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    btn.setAttribute('aria-label', isOpen ? 'סגור תפריט ניווט' : 'פתח תפריט ניווט');
   }
   document.getElementById('nav-links').querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       document.getElementById('nav-links').classList.remove('open');
       document.getElementById('nav-backdrop').classList.remove('open');
+      const btn = document.getElementById('hamburger');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'פתח תפריט ניווט');
     });
   });
 
