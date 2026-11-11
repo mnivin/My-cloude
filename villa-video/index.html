@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Villa drone film</title>
+<style>
+@font-face{font-family:"Frank";font-weight:300;src:url(node_modules/@fontsource/frank-ruhl-libre/files/frank-ruhl-libre-hebrew-300-normal.woff2) format("woff2")}
+@font-face{font-family:"Frank";font-weight:500;src:url(node_modules/@fontsource/frank-ruhl-libre/files/frank-ruhl-libre-hebrew-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Frank";font-weight:300;unicode-range:U+0000-00FF,U+20AA;src:url(node_modules/@fontsource/frank-ruhl-libre/files/frank-ruhl-libre-latin-300-normal.woff2) format("woff2")}
+@font-face{font-family:"Frank";font-weight:500;unicode-range:U+0000-00FF,U+20AA;src:url(node_modules/@fontsource/frank-ruhl-libre/files/frank-ruhl-libre-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Heebo";font-weight:300;src:url(node_modules/@fontsource/heebo/files/heebo-hebrew-300-normal.woff2) format("woff2")}
+@font-face{font-family:"Heebo";font-weight:300;unicode-range:U+0000-00FF,U+20AA;src:url(node_modules/@fontsource/heebo/files/heebo-latin-300-normal.woff2) format("woff2")}
+html,body{margin:0;background:#000;overflow:hidden}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;transform-origin:0 0}
+canvas{position:absolute;inset:0;width:1920px;height:1080px;display:block}
+.t{position:absolute;color:#fff;opacity:0;text-shadow:0 2px 24px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.5);font-family:"Heebo",sans-serif;font-weight:300}
+.t .k{font-size:25px;letter-spacing:.42em;color:#f3dcb4;margin-bottom:18px}
+.t .h{font-family:"Frank",serif;font-weight:300;font-size:118px;line-height:1.05}
+.t .m{font-family:"Frank",serif;font-weight:300;font-size:64px;line-height:1.15}
+.t .s{font-size:30px;letter-spacing:.14em;margin-top:16px;color:#f4ead9}
+.t .rule{height:1px;width:150px;background:#e9c88f;margin:22px 0}
+.center{left:0;right:0;text-align:center}
+.center .rule{margin:26px auto}
+.br{right:120px;bottom:110px;text-align:right}
+.bl{left:120px;bottom:110px;text-align:left}
+#t1{top:120px}
+#t6{top:70px}
+#t6 .h{font-size:92px}
+#t6 .price{font-family:"Frank",serif;font-weight:500;font-size:128px;line-height:1.1;direction:ltr;letter-spacing:.02em}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c" width="1920" height="1080"></canvas>
+  <div class="t center" id="t1"><div class="k">נכס בלעדי · קו ראשון לים</div><div class="h">וילה על קו המים</div><div class="rule"></div><div class="s">המקום שבו היבשה נגמרת והחלום מתחיל</div></div>
+  <div class="t br" id="t2"><div class="k">אדריכלות עכשווית</div><div class="m">1,750 מ״ר של אור, זכוכית ואופק</div><div class="rule"></div><div class="s">מגרש של 5.7 דונם · 6 סוויטות</div></div>
+  <div class="t bl" id="t3"><div class="k">מבט מלמעלה</div><div class="m">בריכת אינפיניטי של 30 מטר</div><div class="rule"></div><div class="s">דק עץ · טרסות אבן · גן טרופי</div></div>
+  <div class="t br" id="t4"><div class="k">כל ערב מחדש</div><div class="m">השקיעה הזו — שלכם</div><div class="rule"></div><div class="s">המים של הבריכה נשפכים אל הים</div></div>
+  <div class="t bl" id="t5"><div class="k">חיים על החוף</div><div class="m">ירידה פרטית אל החול</div><div class="rule"></div><div class="s">40 מטר מהסלון ועד הגל הראשון</div></div>
+  <div class="t center" id="t6"><div class="k">למכירה · הזדמנות נדירה</div><div class="price">₪ 68,000,000</div><div class="rule"></div><div class="s">לתיאום סיור פרטי בנכס</div></div>
+</div>
+<script type="module" src="scene.js"></script>
+</body>
+</html>
